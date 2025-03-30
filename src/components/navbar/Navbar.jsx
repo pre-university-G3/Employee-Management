@@ -13,13 +13,13 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <div className="hidden md:flex flex-row gap-10 text-[16px] lg:text-[20px]">
-        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-6 hover:decoration-[#043873] cursor-pointer">
+        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
           FEATURE
         </h3>
-        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-6 hover:decoration-[#043873] cursor-pointer">
+        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
           ABOUT US
         </h3>
-        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-6 hover:decoration-[#043873] cursor-pointer">
+        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
           HELP & SUPPORT
         </h3>
       </div>
