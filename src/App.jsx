@@ -1,16 +1,12 @@
-import React from 'react';
-import Navbar from './components/navbar/Navbar';
-import Landing from './components/pages/Landing'
+import './App.css'
+import DashBoard from './components/pages/DashBoard'
 
-const App = () => {
+function App() {
+
+
   return (
     <>
-    <Navbar />
-<<<<<<< HEAD
-    
-=======
-    <Landing />
->>>>>>> 2c9960813c8262ad2e879b9eb785548926baa041
+       <DashBoard/>
     </>
   )
 }
