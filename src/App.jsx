@@ -1,13 +1,12 @@
-import React from 'react'
-// import Login from './components/navbar/Login'
-import Navbar from './components/navbar/Navbar'
+import React from 'react';
+import Footer from './components/footer/Footer'
 
-const App = () => {
-  return (
-    <>
-    <Navbar />
-    </>
-  )
+function App() {
+    return (
+        <div>
+            <Footer />
+        </div>
+    );
 }
 
-export default App
+export default App;
