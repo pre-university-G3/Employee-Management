@@ -157,7 +157,7 @@ export default function About() {
         <div className="mx-auto w-[320px] border-t-[5px] border-[#FF0004] mt-1 "></div>
         <p className="ext-[#000000] font-normal text-[24px] leading-[40px] tracking-[0]  max-w-2xl mx-auto mt-7">
           Our mentors are seasoned professionals who offer support, share their
-          knowledge, and assist our users in building strong data skills.
+          knowledge, and assist our users in building strong data skills
         </p>
 
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-12">
