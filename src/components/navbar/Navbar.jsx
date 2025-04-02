@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import logo from '../../assets/logo-v5 (1).png';
+import logo from '../../assets/logo-v6.png';
 import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white backdrop-blur-md flex justify-around items-center font-en text-[#043873] font-bold p-3 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white scroll:bg-white/50 backdrop-blur-md flex justify-around items-center font-en text-[#043873] font-bold p-3 z-50">
       {/* Logo Section */}
       <div className="flex items-center">
         <img className="w-40 sm:w-32" src={logo} alt="logo" />
