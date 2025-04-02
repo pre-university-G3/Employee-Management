@@ -1,103 +1,130 @@
-import React from 'react'
-import Navbar from '../navbar/Navbar'
-import Footer from '../footer/Footer'
+import React from 'react';
+import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
 
-
-import pic1 from '../../assets/landing-pic-1.png'
-import pic2 from '../../assets/landing-pic-2.png'
-import pic3 from '../../assets/landing-pic-3.png'
-import pic4 from '../../assets/landing-pic-4.png'
-import js from '../../assets/js-logo-v2.png'
-import html from '../../assets/html-logo-v2.png'
-import tailwind from '../../assets/tailwind-logo-v2.png'
-import react from '../../assets/react-logo-v2.png'
+import pic1 from '../../assets/landing-pic-1.png';
+import pic2 from '../../assets/landing-pic-2.png';
+import pic3 from '../../assets/landing-pic-3.png';
+import pic4 from '../../assets/landing-pic-4.png';
+import js from '../../assets/js-logo-v2.png';
+import html from '../../assets/html-logo-v2.png';
+import tailwind from '../../assets/tailwind-logo-v2.png';
+import react from '../../assets/react-logo-v2.png';
 
 const Landing = () => {
   return (
-    
     <>
-    <Navbar />
-    <main className="h-[100vh] bg-[#043873]  text-white">
+      <Navbar />
+      <main className="bg-[#043873] text-white">
+        {/* Hero Section */}
+        <section className="h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20">
+          <div>
+            <h1 className="font-bold text-4xl lg:text-5xl leading-snug mb-5">
+              Scale Attendance Management Safe and Secure
+            </h1>
+            <p className="leading-7 lg:leading-8 mb-5">
+              Manage your employees' attendance with fast and reliable processes. Secure and highly customizable. Rise Attendance is the best partner for you if you want to scale your workforce management efficiently worldwide.
+            </p>
+            <button className="border-2 border-blue-950 px-6 py-3 mt-5 hover:bg-blue-950 hover:text-white transition duration-300">
+              GET STARTED
+            </button>
+          </div>
+          <div className="flex justify-center">
+            <img src={pic1} alt="Hero" className="w-full max-w-md lg:max-w-lg" />
+          </div>
+        </section>
 
-      <section className="h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 xl:pl-30 xl:pr-30 sm:pl-0 sm-pr-0 gap-10 bg-gradient-to-r from-0% from-[#2156B2] via-50% via-[#043873] to-100% to-[#2156B2] xl:content-center">
-      <div className="">
-        <h1 className="font-bold text-5xl leading-15 xl:pl-10 xl:pr-10 sm:pl-100 sm:pr-10 mb-5 self-center">Scale Attendance Management Safe and Secure</h1>
-        <p className="leading-8 pl-10">Manage your employees' attendance with fast and reliable processes. Secure and highly customization. Rise Attendance is the best partner for you if you want to scale your workforce management efficiently worldwide.</p>
-        <button className="border-2 border-blue-950 pt-3 pb-3 pl-3 pr-3 mt-5 ml-10">GET STARTED</button>
-      </div> 
-       <div className="">
-          <img src={pic1} alt="" />
-       </div>
+        {/* Smart Attendance Section */}
+        <section className="py-20 px-5 lg:px-20 bg-white text-black grid lg:grid-cols-2 gap-10">
+          <div className="flex flex-col justify-center">
+            <h2 className="font-bold text-3xl lg:text-4xl text-[#043873] mb-5">
+              Smart Attendance Management
+            </h2>
+            <p className="leading-7 lg:leading-8">
+              Track employee attendance effortlessly with support for images, documents, and audio records. Generate reports, create shift schedules, and manage attendance data securely. Capture and save records instantly using the mobile app.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <img src={pic2} alt="Smart Attendance" className="w-full max-w-md lg:max-w-lg" />
+          </div>
+        </section>
 
-    </section>
+        {/* Collaborate Section */}
+        <section className="py-20 px-5 lg:px-20 bg-gray-100 text-black grid lg:grid-cols-2 gap-10">
+          <div className="flex flex-col justify-center order-2 lg:order-1">
+            <h2 className="font-bold text-3xl lg:text-4xl text-[#043873] mb-5">
+              Collaborate with Your Team
+            </h2>
+            <p className="leading-7 lg:leading-8">
+              Use the employee management system to share updates, notes, and tasks with your team members. Collaborate seamlessly and keep everyone on the same page. You can also share information through secure links to keep your team informed.
+            </p>
+          </div>
+          <div className="flex justify-center order-1 lg:order-2">
+            <img src={pic3} alt="Collaborate" className="w-full max-w-md lg:max-w-lg" />
+          </div>
+        </section>
 
-    <section className="h-[120vh] white grid xl:grid-cols-2 sm:grid-cols-1 xl:pl-30 xl:pr-30 sm:pl-0 sm:pr-0 text-black content-center">
+        {/* Manage Workforce Section */}
+        <section className="py-20 px-5 lg:px-20 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] text-white text-center">
+          <h2 className="font-bold text-3xl lg:text-4xl mb-5">
+            Manage Your Workforce Anywhere, Anytime
+          </h2>
+          <p className="leading-7 lg:leading-8 max-w-3xl mx-auto">
+            Easily track attendance, manage shifts, and oversee employee performance from any device. Whether you're in the office or working remotely, our platform keeps you connected with real-time updates and cloud-based access.
+          </p>
+        </section>
 
-      <div className="content-center">
-        <h2 className="font-bold text-5xl leading-15 xl:pr-10 sm:pr-10 sm:pl-10 gap-10 text-[#043873]">Smart Attendance Management</h2>
-        <p className="xl:pr-10 sm:pr-10 sm:pl-10 text-justify pt-10">Track employee attendance effortlessly with support for images, documents, and audio records. Generate reports, create shift schedules, and manage attendance data securely. Capture and save records instantly using the mobile app.</p>
-      </div>
-      <div className="">
-        <img src={pic2} alt="" />
-      </div>
-      <div className="">
+        {/* Employee Data Section */}
+        <section className="py-20 px-5 lg:px-20 bg-white text-black grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="font-bold text-3xl lg:text-4xl text-[#043873] mb-5">
+              100% Your Employee Data
+            </h2>
+            <p className="leading-7 lg:leading-8">
+              Our system is open source, and all employee records are saved in an open, accessible format giving you complete control. You'll always have direct access to your data, with no restrictions or hidden barriers.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <img src={pic4} alt="Employee Data" className="w-full max-w-md lg:max-w-lg" />
+          </div>
+        </section>
 
-        <h2 className="font-bold text-5xl leading-15 xl:pr-10 sm:pr-10 sm:pl-10 gap-10 text-[#043873] pt-20">Collaborate with Your Team</h2>
-        <p className="xl:pr-10 sm:pr-10 sm:pl-10 text-justify pt-10">Use the employee management system to share updates, notes, and tasks with your team members. Collaborate seamlessly and keep everyone on the same page. You can also share information through secure links to keep your team informed.</p>
-        
-      </div>
-      <div className="">
-        <img src={pic3} alt="" />
-      </div>
+        {/* Tech Stack Section */}
+        <section className="py-20 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] text-white text-center">
+  <h2 className="font-bold text-3xl lg:text-4xl mb-10">TECH STACK</h2>
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center">
+    <img className="w-16 sm:w-20 lg:w-32" src={js} alt="JavaScript" />
+    <img className="w-16 sm:w-20 lg:w-32" src={html} alt="HTML" />
+    <img className="w-16 sm:w-20 lg:w-32" src={tailwind} alt="TailwindCSS" />
+    <img className="w-16 sm:w-20 lg:w-32" src={react} alt="React" />
+  </div>
+</section>
 
-    </section>
-
-    <section className="h-[35vh] bg-gradient-to-r from-0% from-[#2156B2] via-50% via-[#043873] to-100% to-[#2156B2] pt-6">
-      < h2 className="font-bold text-5xl leading-30 xl:pr-10 sm:pr-10 sm:pl-10 gap-10 text-center">Manage Your Workforce Anywhere, Anytime</h2>
-      <p className="text-justify pr-70 pl-63">Easily track attendance, manage shifts, and oversee employee performance from any device. Whether you're in the office or working remotely, our platform keeps you connected with real-time updates and cloud-based access</p>
-    </section>
-    
-    <section className="h-[100vh] grid grid-cols-2 place-content-center">
-        <h2 className="font-bold text-5xl leading-15 xl:pr-10 sm:pr-10 sm:pl-10 gap-10 text-center text-[#043873]">100% your employee data
-          <p className="font-normal text-xl pt-10 xl:pr-10 sm:pr-10 sm:pl-10 text-justify text-[#043873]">Our system is open source, and all employee records are saved in an open, accessible format giving you complete control. You'll always have direct access to your data, with no restrictions or hidden barriers.</p>
-        </h2>
-        <div>
-          <img src={pic4} alt="" />
-        </div>
-    </section>
-
-    <section className="h-[35vh] bg-gradient-to-r from-0% from-[#2156B2] via-50% via-[#043873] to-100% to-[#2156B2]">
-        <h2 className="font-bold text-5xl leading-20 xl:pr-10 sm:pr-10 sm:pl-10 text-center pt-3">TECH STACK</h2>
-        <div className="flex flex-row gap-5 place-content-center">
-          <img className="w-40" src={js} alt="js" />
-          <img className="w-40" src={html} alt="html" />
-          <img className="w-40" src={tailwind} alt="tailwindCSS" />
-          <img className="w-40" src={react} alt="react" />
-        </div>
-    </section>
-
-    <section className="h-[100vh]">
-        <h2 className="font-bold text-5xl leading-40 xl:pr-10 sm:pr-10 sm:pl-10 text-center pt-3 text-[#043873]">What Our Clients Says</h2>
-        <article className="grid grid-cols-[repeat(3,400px)] gap-5 place-content-center ">
-          <div className="bg-white shadow-md w-100 h-100 rounded-3xl text-black">
-            <p>Checkify is designed as a collaboration tool for businesses that is a full project management solution.</p>
-            <h3 className="text-[#043873] font-bold">Hout Sokleng</h3>
-            <p>Head of Talent Acquisition, North America</p>
+        {/* Client Testimonials Section */}
+        <section className="py-20 px-5 lg:px-20 bg-gray-100 text-black text-center">
+          <h2 className="font-bold text-3xl lg:text-4xl mb-10 text-[#043873]">
+            What Our Clients Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="bg-white shadow-md rounded-3xl p-5">
+              <p>
+                Checkify is designed as a collaboration tool for businesses that is a full project management solution.
+              </p>
+              <h3 className="text-[#043873] font-bold mt-5">Hout Sokleng</h3>
+              <p>Head of Talent Acquisition, North America</p>
             </div>
-          <div className="bg-white shadow-md w-100 h-100 rounded-3xl"></div>
-          <div className="bg-white shadow-md w-100 h-100 rounded-3xl"></div>
-        </article>
-    </section>
+            <div className="bg-white shadow-md rounded-3xl p-5"></div>
+            <div className="bg-white shadow-md rounded-3xl p-5"></div>
+          </div>
+        </section>
 
-    <section className="h-[30vh] bg-[#043873]">
-    <Footer />
-    </section>
-    
-    </main>
-    
-
+        {/* Footer Section */}
+        <section className="bg-[#043873] py-10">
+          <Footer />
+        </section>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;
