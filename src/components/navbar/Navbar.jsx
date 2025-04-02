@@ -8,9 +8,11 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-sm flex justify-around items-center font-en text-[#043873] font-bold p-3 z-50">
       {/* Logo Section */}
-      <div className="flex items-center">
-        <img className="w-40 sm:w-32" src={logo} alt="logo" />
+
+      <Link to='/'><div className="flex items-center">
+        <img className="w-40 sm:w-32 cursor-pointer" src={logo} alt="logo" />
       </div>
+      </Link>
 
       {/* Navigation Links for Desktop */}
       <div className="hidden md:flex flex-row gap-10 text-[16px] lg:text-[20px]">
