@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../navbar/Navbar'
+import Footer from '../footer/Footer'
 
 
 import pic1 from '../../assets/landing-pic-1.png'
@@ -89,10 +90,11 @@ const Landing = () => {
     </section>
 
     <section className="h-[30vh] bg-[#043873]">
-    
+    <Footer />
     </section>
-
+    
     </main>
+    
 
     </>
   )
