@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-sm flex justify-between items-center font-en text-[#043873] font-bold p-3 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-sm flex justify-around items-center font-en text-[#043873] font-bold p-3 z-50">
       {/* Logo Section */}
       <div className="flex items-center">
         <img className="w-40 sm:w-32" src={logo} alt="logo" />
