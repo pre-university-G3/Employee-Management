@@ -4,8 +4,8 @@ import Footer from '../footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import first from '../../assets/help-pic-1.png';
-import second from '../../assets/help-pic-2.png';
+import first from '../../assets/help-pic-2.png';
+import second from '../../assets/help-pic-1.png';
 
 const Help = () => {
   const [openQuestion, setOpenQuestion] = useState(null);
@@ -46,10 +46,10 @@ const Help = () => {
             <img
               src={first}
               alt="Help illustration"
-              className="w-100 h-80 mb-3"
+              className="w-70 h-70 mb-3 pl-10"
             />
-            <div className="text-lg pr-15 font-bold text-white">ANY QUESTIONS?</div>
-            <div className="mb-4 pr-15 text-center text-white">
+            <div className="text-lg pr-5 font-bold text-white">ANY QUESTIONS?</div>
+            <div className="mb-5 pr-5 text-center text-white">
               You can ask anything you want to know
             </div>
             <label htmlFor="Question" className="sr-only">
@@ -180,7 +180,7 @@ const Help = () => {
               <img
                 src={second}
                 alt="Contact illustration"
-                className="max-w-full"
+                className="max-w-full w-90"
               />
             </div>
 
