@@ -43,18 +43,18 @@ const Help = () => {
               required
               placeholder="Question"
               autoComplete="off"
-              className="w-[75%] max-w-md rounded-md bg-white px-4 py-2 text-base text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-[60%] mr-15 rounded-md bg-white px-4 py-2 text-base text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
             <button
               type="submit"
-              className="mt-4 rounded-md bg-white/90 px-6 py-2 text-sm font-semibold text-blue-800 shadow-md hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="mt-4 mr-20 rounded-md bg-white/90 px-6 py-2 text-sm font-semibold text-blue-800 shadow-md hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               Submit
             </button>
           </section>
 
           {/* Right Section - FAQ Questions */}
-          <section className="p-5 flex flex-col pt-10 gap-4">
+          <section className="p-5 flex flex-col pt-20 gap-4">
             {/* Question 1 */}
             <div className="p-4 bg-white rounded-md text-lg text-blue-600 flex justify-between items-center">
               <span>What is the Employee Management System?</span>
@@ -172,7 +172,7 @@ const Help = () => {
                 <input
                   type="text"
                   id="name"
-                  placeholder="Sim Sol"
+                  placeholder="Enter your name"
                   className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
