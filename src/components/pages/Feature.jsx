@@ -1,8 +1,14 @@
 import React from 'react'
+import Navbar from '../navbar/Navbar'
 
 const Feature = () => {
   return (
-    <div>Feature Page</div>
+    <>
+    <Navbar />
+    <section className="flex justify-center items-center h-[100vh]">
+    <h1 className="font-bold text-[10em]">Feature Page</h1>
+    </section>
+    </>
   )
 }
 
