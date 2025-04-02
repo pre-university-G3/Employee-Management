@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../assets/logo-v5 (1).png';
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,15 +14,15 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <div className="hidden md:flex flex-row gap-10 text-[16px] lg:text-[20px]">
-        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
+        <Link to='/feature'><h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
           FEATURE
-        </h3>
-        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
+        </h3></Link>
+        <Link to='/about'><h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
           ABOUT US
-        </h3>
-        <h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
+        </h3></Link>
+        <Link to='./help'><h3 className="hover:underline hover:decoration-5 hover:underline-offset-5 hover:decoration-[#043873] cursor-pointer">
           HELP & SUPPORT
-        </h3>
+        </h3></Link>
       </div>
 
       {/* Login Button */}
