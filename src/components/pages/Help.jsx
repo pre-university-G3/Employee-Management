@@ -140,11 +140,11 @@ const Help = () => {
       </nav>
 
       {/* Contact Us Section */}
-      <div className="min-h-screen bg-white p-20">
+      <div className="min-h-screen bg-white p-20 mb-10 mt-5">
         <div className="border-0 rounded-2xl shadow-lg">
           <section className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-900">CONTACT US</h2>
-            <p className="font-bold pt-5 text-4xl text-gray-400">-------------------</p>
+            <p className="font-bold pt-5 text-4xl text-gray-400">-------------------- </p>
             <p className="text-gray-600 mt-2 pt-5">
               Send your queries using the form below, or email us at{' '}
               <a href="mailto:checkify.kh@gmail.com" className="text-blue-600 underline">
