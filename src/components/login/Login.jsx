@@ -99,7 +99,7 @@ const Login = () => {
               />
             </div>
             {/* Login Button */}
-            <button className="bg-primary-color text-white py-2 md:py-4 rounded-lg hover:bg-[#032a5e] transition-all duration-300 shadow-md hover:shadow-lg text-base md:text-lg">
+            <button className="bg-primary-color text-white py-2 md:py-4 rounded-lg hover:bg-[#032a5e] hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-base md:text-lg">
               Login Now
             </button>
           </div>

@@ -15,6 +15,9 @@ import js from "../../assets/js-logo-v2.png";
 import html from "../../assets/html-logo-v2.png";
 import tailwind from "../../assets/tailwind-logo-v2.png";
 import react from "../../assets/react-logo-v2.png";
+import demo from '../../assets/demo-pic.jpg'
+import quote1 from '../../assets/quote-v7.png'
+import quote2 from '../../assets/quote-v2.png'
 
 const Home = () => {
   useEffect(() => {
@@ -58,11 +61,11 @@ const Home = () => {
 
         {/* Smart Attendance Section */}
         <section
-          className="py-20 px-5 lg:px-20 bg-white text-black grid lg:grid-cols-2 gap-10"
+          className="py-10 pb-0 px-5 lg:px-20 bg-white text-black grid lg:grid-cols-2 gap-10"
           data-aos="fade-right"
         >
           <div>
-            <h2 className="font-bold text-3xl lg:text-4xl text-[#043873] mb-5">
+            <h2 className="font-bold text-3xl lg:text-4xl text-[#043873] mb-5 pt-20">
               Smart Attendance Management
             </h2>
             <p className="leading-7 lg:leading-8">
@@ -83,20 +86,9 @@ const Home = () => {
 
         {/* Collaborate Section */}
         <section
-          className="py-20 px-5 lg:px-20 bg-white text-black grid lg:grid-cols-2 gap-10"
+          className="py-10 pt-5 px-5 lg:px-20 lg:pl-0 bg-white text-black grid lg:grid-cols-2 gap-10"
           data-aos="fade-up"
         >
-          <div className="flex flex-col justify-center order-2 lg:order-1">
-            <h2 className="font-bold text-3xl lg:text-4xl text-[#043873] mb-5">
-              Collaborate with Your Team
-            </h2>
-            <p className="leading-7 lg:leading-8">
-              Use the employee management system to share updates, notes, and
-              tasks with your team members. Collaborate seamlessly and keep
-              everyone on the same page. You can also share information through
-              secure links to keep your team informed.
-            </p>
-          </div>
           <div
             className="flex justify-center order-1 lg:order-2"
             data-aos="fade-right"
@@ -106,6 +98,18 @@ const Home = () => {
               alt="Collaborate"
               className="w-full max-w-md lg:max-w-lg"
             />
+          </div>
+
+          <div className="flex flex-col justify-center order-1 lg:order-2">
+            <h2 className="font-bold text-3xl lg:text-4xl text-[#043873] mb-5">
+              Collaborate with Your Team
+            </h2>
+            <p className="leading-7 lg:leading-8">
+              Use the employee management system to share updates, notes, and
+              tasks with your team members. Collaborate seamlessly and keep
+              everyone on the same page. You can also share information through
+              secure links to keep your team informed.
+            </p>
           </div>
         </section>
 
@@ -170,23 +174,70 @@ const Home = () => {
 
         {/* Client Testimonials Section */}
         <section
-          className="py-20 px-5 lg:px-20 bg-white text-black text-center"
+          className="py-30 px-5 lg:px-20 not-[]:text-black text-center"
           data-aos="fade-up"
         >
           <h2 className="font-bold text-3xl lg:text-4xl mb-10 text-[#043873]">
             What Our Clients Say
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div className="bg-white shadow-md rounded-3xl p-5">
-              <p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(3,400px)] gap-5 justify-center">
+            <div className="bg-white shadow-md rounded-3xl p-5 h-100 w-90 justify-self-center">
+              <img 
+              src={quote1} 
+              alt="" 
+              className="w-28 pl-5 pb-2 "
+              />
+              <p className="border-b-1 pb-3 text-justify text-black">
                 Checkify is designed as a collaboration tool for businesses that
                 is a full project management solution.
               </p>
-              <h3 className="text-[#043873] font-bold mt-5">Hout Sokleng</h3>
-              <p>Head of Talent Acquisition, North America</p>
+              <img 
+              src={demo}
+               alt="" 
+               className="w-30 h-30 rounded-full float-left mt-5"
+               />
+              <h3 className="text-[#043873] font-bold mt-5 text-2xl">Hout Sokleng</h3>
+              <p className="pl-33 text-start text-black">Head of Talent Acquisition, North America</p>
             </div>
-            <div className="bg-white shadow-md rounded-3xl p-5"></div>
-            <div className="bg-white shadow-md rounded-3xl p-5"></div>
+            
+            <div className="bg-primary-color shadow-md rounded-3xl p-5 h-100 w-90 justify-self-center text-white">
+              <img 
+              src={quote2} 
+              alt="" 
+              className="w-30 pb-5"
+              />
+              <p className="border-b-1 pb-3 text-justify ">
+                Checkify is designed as a collaboration tool for businesses that
+                is a full project management solution.
+              </p>
+              <img 
+              src={demo}
+               alt="" 
+               className="w-30 h-30 rounded-full float-left mt-5"
+               />
+              <h3 className="text-white font-bold mt-5 text-2xl">Hout Sokleng</h3>
+              <p className="pl-33 text-start text-whtie">Head of Talent Acquisition, North America</p>
+            </div>
+
+            <div className="bg-primary-color shadow-md rounded-3xl p-5 h-100 w-90 justify-self-center text-white">
+              <img 
+              src={quote2} 
+              alt="" 
+              className="w-30 pb-5"
+              />
+              <p className="border-b-1 pb-3 text-justify ">
+                Checkify is designed as a collaboration tool for businesses that
+                is a full project management solution.
+              </p>
+              <img 
+              src={demo}
+               alt="" 
+               className="w-30 h-30 rounded-full float-left mt-5"
+               />
+              <h3 className="text-white font-bold mt-5 text-2xl">Hout Sokleng</h3>
+              <p className="pl-33 text-start text-whtie">Head of Talent Acquisition, North America</p>
+            </div>
+
           </div>
         </section>
 
