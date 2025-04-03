@@ -4,7 +4,7 @@ import istad from '../../assets/logo-ISTAD-01.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white py-8">
+    <footer className="bg-blue-900  text-white py-8">
     <div className="container p mx-auto px-4">
       <div className="flex flex-wrap justify-between">
         {/* Logo Section */}
@@ -59,11 +59,13 @@ const Footer = () => {
 
         {/* Organized By Section with Button */}
         <div className="w-full md:w-1/5 mb-6 md:mb-0 text-right">
+        
           <h3 className="text-lg font-semibold mb-4">Organized by</h3>
-            <img src="istad" alt="" />
-            ISTAD
-       
-          <a href="#" className="text-sm text-blue-400 hover:underline mt-2 block">
+        <div className="w-15 h-15 absolute right-10 md:w-xm mb-6 md:mb-0">
+          <img src={istad} alt="" />
+        </div>
+           
+          <a href="https://www.cstad.edu.kh/" className="text-sm text-blue-400 hover:underline mt-2 block">
             Visit ISTAD website →
           </a>
         </div>
