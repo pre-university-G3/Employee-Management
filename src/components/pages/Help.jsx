@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../navbar/Navbar';
-import Footer from '../footer/Footer';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useState, useEffect } from "react";
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
+import Submit from "../button/Submit";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import first from '../../assets/help-pic-2.png';
-import second from '../../assets/help-pic-1.png';
+import first from "../../assets/help-pic-2.png";
+import second from "../../assets/help-pic-1.png";
 
 const Help = () => {
   const [openQuestion, setOpenQuestion] = useState(null);
@@ -23,7 +24,7 @@ const Help = () => {
   };
 
   return (
-    <main>
+    <main className="pt-20">
       <Navbar />
 
       {/* FAQ Section */}
@@ -48,7 +49,9 @@ const Help = () => {
               alt="Help illustration"
               className="w-70 h-70 mb-3 pl-10"
             />
-            <div className="text-lg pr-5 font-bold text-white">ANY QUESTIONS?</div>
+            <div className="text-lg pr-5 font-bold text-white">
+              ANY QUESTIONS?
+            </div>
             <div className="mb-5 pr-5 text-center text-white">
               You can ask anything you want to know
             </div>
@@ -64,23 +67,23 @@ const Help = () => {
               autoComplete="off"
               className="w-[60%] rounded-md bg-white px-4 py-2 text-base text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
-            <button
-              type="submit"
-              className="mt-4 rounded-md bg-white/90 px-6 py-2 text-sm font-semibold text-[#043873] shadow-md hover:bg-white/80 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
+            <button className="bg-white border-2 border-blue-950 px-6 py-3 mt-5 hover:bg-blue-950 hover:text-white transition duration-300 transform hover:scale-105">
               Submit
             </button>
           </section>
 
           {/* Right Section - FAQ Questions */}
-          <section className="p-5 flex flex-col pt-20 gap-4 place-content-center" data-aos="fade-left">
+          <section
+            className="p-5 flex flex-col pt-20 gap-4 place-content-center"
+            data-aos="fade-left"
+          >
             {/* Question 1 */}
             <div className="p-4 bg-white rounded-md text-lg text-[#043873] font-bold flex justify-between items-center">
               <span>What is the Employee Management System?</span>
               <button onClick={() => toggleQuestion(1)}>
                 <svg
                   className={`w-5 h-5 text-[#043873] transform transition-transform ${
-                    openQuestion === 1 ? 'rotate-180' : ''
+                    openQuestion === 1 ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -97,7 +100,9 @@ const Help = () => {
             </div>
             {openQuestion === 1 && (
               <div className="p-4 bg-white rounded-md text-gray-600">
-                The Employee Management System is a software solution designed to streamline HR processes, manage employee data, track performance, and improve workforce productivity.
+                The Employee Management System is a software solution designed
+                to streamline HR processes, manage employee data, track
+                performance, and improve workforce productivity.
               </div>
             )}
 
@@ -107,7 +112,7 @@ const Help = () => {
               <button onClick={() => toggleQuestion(2)}>
                 <svg
                   className={`w-5 h-5 text-[#043873] transform transition-transform ${
-                    openQuestion === 2 ? 'rotate-180' : ''
+                    openQuestion === 2 ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -124,7 +129,9 @@ const Help = () => {
             </div>
             {openQuestion === 2 && (
               <div className="p-4 bg-white rounded-md text-gray-600">
-                It improves efficiency, reduces manual errors, enhances employee engagement, and provides valuable insights through data analytics.
+                It improves efficiency, reduces manual errors, enhances employee
+                engagement, and provides valuable insights through data
+                analytics.
               </div>
             )}
 
@@ -134,7 +141,7 @@ const Help = () => {
               <button onClick={() => toggleQuestion(3)}>
                 <svg
                   className={`w-5 h-5 text-[#043873] transform transition-transform ${
-                    openQuestion === 3 ? 'rotate-180' : ''
+                    openQuestion === 3 ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -151,7 +158,8 @@ const Help = () => {
             </div>
             {openQuestion === 3 && (
               <div className="p-4 bg-white rounded-md text-gray-600">
-                You can get started by signing up for a free trial on our website or contacting our sales team for a demo.
+                You can get started by signing up for a free trial on our
+                website or contacting our sales team for a demo.
               </div>
             )}
           </section>
@@ -165,8 +173,11 @@ const Help = () => {
             <h2 className="text-4xl font-bold text-gray-900">CONTACT US</h2>
             <hr className="w-20 mx-auto mt-5 border-t-4 border-gray-900" />
             <p className="text-gray-600 mt-5">
-              Send your queries using the form below, or email us at{' '}
-              <a href="mailto:checkify.kh@gmail.com" className="text-blue-600 underline">
+              Send your queries using the form below, or email us at{" "}
+              <a
+                href="mailto:checkify.kh@gmail.com"
+                className="text-blue-600 underline"
+              >
                 checkify.kh@gmail.com
               </a>
               .
@@ -176,7 +187,10 @@ const Help = () => {
           {/* Main Content */}
           <div className="w-[90%] lg:w-[80%] pb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Section: Illustration */}
-            <div className="flex justify-center items-center" data-aos="fade-right">
+            <div
+              className="flex justify-center items-center"
+              data-aos="fade-right"
+            >
               <img
                 src={second}
                 alt="Contact illustration"
@@ -220,12 +234,7 @@ const Help = () => {
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="rounded-md bg-[#043873] px-5 py-2 text-sm font-semibold text-white hover:bg-[#043873]/80 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                Submit
-              </button>
+              <Submit />
             </form>
           </div>
         </div>
