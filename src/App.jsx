@@ -4,6 +4,9 @@ import Home from './components/pages/Home';
 import Feature from './components/pages/Feature';
 import About from './components/pages/About';
 import Help from './components/pages/Help';
+import AdminDB from './components/dashboard/AdminDB'
+import Empcontent from './components/dashboard-content/Empcontent'
+import LoginFormik from './components/login/LoginFormik'
 import ProgressScrollBar from './components/scroll/ProgressScrollBar';
 
 import Login from './components/login/Login';
@@ -21,7 +24,10 @@ const App = () => {
         <Route path='/feature' element={<Feature />} />
         <Route path='/about' element={<About />} />
         <Route path='/help' element={<Help />} />
+        <Route path='/empDashboard' element={<Empcontent />} />
         <Route path='/grid' element={<Grid />} />
+        <Route path='/adminDashboard' element={<AdminDB />} />
+        <Route path='/loginformik' element={<LoginFormik />} />
     </Routes>
     <ProgressScrollBar />
 

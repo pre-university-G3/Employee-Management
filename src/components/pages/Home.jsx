@@ -47,7 +47,7 @@ const Home = () => {
               management efficiently worldwide.
             </p>
 
-           <Link to='/login'> <Button /> </Link>
+           <Link to='/loginformik'> <Button /> </Link>
           </div>
 
           <div className="flex justify-center" data-aos="fade-left">

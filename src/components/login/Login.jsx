@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Image from '../../assets/logo-dark-v2.png';
 
 const Login = () => {
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds

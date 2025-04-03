@@ -36,7 +36,7 @@ export default function Navbar() {
 
       {/* Desktop Login Button */}
       <div className="hidden md:block">
-        <Link to="/login">
+        <Link to="/loginformik">
           <button className="bg-[#043873] text-white px-6 py-2 rounded-lg hover:bg-[#032a5e] transition duration-300 cursor-pointer hover:scale-105">
             LOGIN
           </button>
