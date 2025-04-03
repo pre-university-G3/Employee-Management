@@ -5,9 +5,9 @@ import Image from '../../assets/logo-dark-v2.png';
 const Login = () => {
   return (
     <main className=" relative flex justify-center items-center h-screen bg-gray-100 bg-[url('assets/Login-bg.jpg')] bg-cover bg-center">
-      <div className="bg-blue-950 text-3xl text-white font-sans  w-78 h-81 rounded-20 flex justify center items-center p-0 font-san text-2xl ">
-      <img src={Image} alt="Logo" width={65} height={85} className=" relative bottom-35 left-2 " />
-        <p className="bg-gradient-to-b from-white/80 to-white/10 bg-clip-text text-transparent text-3xl font-regular italic p-0 left-0 pr-0 backdrop-blur-md">
+      <div className="bg-blue-950 text-3xl text-white font-sans  w-100 h-91 rounded-20 flex justify center items-center p-0 font-san text-3xl ">
+      <img src={Image} alt="Logo" width={110} height={110} className=" relative bottom-40 left-2 " />
+        <p className="bg-gradient-to-b from-white/80 to-white/10 bg-clip-text text-transparent text-4xl font-regular italic p-0 left-0 pr-0 backdrop-blur-md">
         Welcome.
         <br/>  
         Start your journey now with our 
@@ -17,7 +17,7 @@ const Login = () => {
         </p>
 
       </div>
-      <section className="bg-white p-8 rounded-lg shadow-md w-96">
+      <section className="bg-white p-8 rounded-lg shadow-md w-120 h-91">
         <h2 className="text-center text-2xl font-bold mb-4">Login to your account</h2>
         <div className="flex flex-col space-y-4">
           <div className="flex flex-col">
@@ -36,7 +36,4 @@ const Login = () => {
   )
 }
 export default Login;
-
-
-
 
