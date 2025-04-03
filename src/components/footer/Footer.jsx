@@ -5,7 +5,7 @@ import istad from "../../assets/logo-ISTAD-01.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#043873] text-white py-8">
+    <footer className="xl:h-[38vh] bg-[#043873] text-white py-7">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between gap-5">
           {/* Logo Section */}
@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
 
           {/* Feature Links */}
-          <div className="w-full sm:w-1/2 md:w-1/5 mb-6 md:mb-0">
+          <div className="w-5 sm:w-1/2 xl:w-30 mb-6 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">Feature</h3>
             <ul>
               <li className="mb-2">
@@ -31,16 +31,12 @@ const Footer = () => {
                   Attendance
                 </a>
               </li>
-              <li className="mb-2">
-                <a href="#" className="hover:underline">
-                  Contact
-                </a>
-              </li>
+              
             </ul>
           </div>
 
           {/* About Us Links */}
-          <div className="w-full sm:w-1/2 md:w-1/5 mb-6 md:mb-0">
+          <div className="w-full sm:w-1/2 md:w-40 mb-6 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">About us</h3>
             <ul>
               <li className="mb-2">
@@ -62,7 +58,7 @@ const Footer = () => {
           </div>
 
           {/* Help & Support Links */}
-          <div className="w-full sm:w-1/2 md:w-1/5 mb-6 md:mb-0">
+          <div className="w-full sm:w-1/2 md:w-30 mb-6 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">Help & Support</h3>
             <ul>
               <li className="mb-2">
@@ -80,7 +76,7 @@ const Footer = () => {
 
           {/* Organized By Section */}
           <div className="w-full sm:w-1/2 md:w-1/5 mb-6 md:mb-0 text-center md:text-right">
-            <h3 className="text-lg font-semibold mb-4">Organized by</h3>
+            <h3 className="text-lg font-semibold mb-4 xl:justify-self-start">Organized by</h3>
             <img
               className="w-28 md:w-32 lg:w-36 object-contain mx-auto md:mx-0"
               src={istad}
@@ -89,7 +85,7 @@ const Footer = () => {
             <a
               href="https://www.cstad.edu.kh/"
               target="_new"
-              className="text-sm text-blue-400 hover:underline mt-2 block"
+              className="text-sm text-blue-400 hover:underline underline-offset-3 decoration-3 mt-2 block xl:justify-self-start"
             >
               Visit ISTAD website →
             </a>

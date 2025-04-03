@@ -191,9 +191,7 @@ const Home = () => {
         </section>
 
         {/* Footer Section */}
-        <section className="bg-[#043873] py-10">
           <Footer />
-        </section>
       </main>
     </>
   );
