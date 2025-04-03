@@ -1,12 +1,11 @@
 import './App.css'
-import DashBoard from './components/pages/DashBoard'
+import EMPContent from './components/pages/EMPContent'
+
 
 function App() {
-
-
   return (
     <>
-       <DashBoard/>
+      <EMPContent/>
     </>
   )
 }

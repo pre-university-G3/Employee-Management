@@ -12,7 +12,7 @@ const Sidebar = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5 text-white"
+                    className="w-[30px] h-[48px] text-white"
                 >
                     <path
                         strokeLinecap="round"
@@ -32,7 +32,7 @@ const Sidebar = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-[30px] h-[48px]"
                 >
                     <path
                         strokeLinecap="round"
@@ -46,19 +46,8 @@ const Sidebar = () => {
             href: 'javascript:void(0)',
             name: 'Account',
             icon: (
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
-                    />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[30px] h-[48px]">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                 </svg>
             ),
         },
@@ -75,7 +64,7 @@ const Sidebar = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5 text-black"
+                    className="w-[30px] h-[60px] text-black"
                 >
                     <path
                         strokeLinecap="round"
@@ -89,7 +78,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 w-full h-full border-r pt-3 space-y-8 sm:w-[363px]">
+            <nav className="w-full h-full border-r pt-9 sm:w-[420px]">
                 <div className="flex flex-col h-full">
                     <div className="h-20 flex items-center px-8">
                         <a href="javascript:void(0)" className="flex items-center gap-3">
@@ -100,11 +89,11 @@ const Sidebar = () => {
                                 className="mx-auto"
                                 alt="Vector Icon"
                             />
-                            <h3 className="font-bold text-[26px]">DashBoard</h3>
+                            <h3 className="font-bold text-[36px] font-mon">DashBoard</h3>
                         </a>
                     </div>
-                    <div className="flex-1 flex flex-col h-full overflow-auto">
-                        <ul className="px-4 text-sm font-medium flex-1 pt-4">
+                    <div className="flex-1 flex flex-col h-full overflow-auto mt-4">
+                        <ul className="px-4 text-sm font-medium flex-1 pt-7">
                             {navigation.map((item, idx) => (
                                 <li
                                     key={idx}
@@ -114,8 +103,8 @@ const Sidebar = () => {
                                 >
                                     <a
                                         href={item.href}
-                                        className={`flex items-center gap-x-2 p-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 duration-150 ${
-                                            item.name === 'Dashboard' ? 'bg-[#043873] text-white' : 'text-gray-600'
+                                        className={`flex items-center text-[20px] gap-x-2 p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150 ${
+                                            item.name === 'Dashboard' ? 'bg-[#043873] text-white text-[20px] hover:bg-green-500' : 'text-gray-600'
                                         }`}                                    >
                                         <div className="text-gray-500">{item.icon}</div>
                                         {item.name}
@@ -129,9 +118,9 @@ const Sidebar = () => {
                                     <li key={idx}>
                                         <a
                                             href={item.href}
-                                            className="flex items-center gap-x-2 text-black p-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 duration-150"
+                                            className="flex items-center gap-x-2 text-black text-[24px] p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150"
                                         >
-                                            <div className="text-gray-500">{item.icon}</div>
+                                            <div className="text-black">{item.icon}</div>
                                             {item.name}
                                         </a>
                                     </li>
