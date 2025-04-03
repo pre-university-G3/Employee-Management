@@ -5,8 +5,9 @@ import Submit from "../button/Submit";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import first from "../../assets/help-pic-2.png";
+// import first from "../../assets/help-pic-2.png";
 import second from "../../assets/help-pic-1.png";
+import question from "../../assets/question-5.gif";
 
 const Help = () => {
   const [openQuestion, setOpenQuestion] = useState(null);
@@ -45,14 +46,14 @@ const Help = () => {
             data-aos="fade-right"
           >
             <img
-              src={first}
+              src={question}
               alt="Help illustration"
               className="w-70 h-70 mb-3 pl-10"
             />
-            <div className="text-lg pr-5 font-bold text-white">
+            <div className="text-lg font-bold text-white">
               ANY QUESTIONS?
             </div>
-            <div className="mb-5 pr-5 text-center text-white">
+            <div className="mb-5 text-center text-white">
               You can ask anything you want to know
             </div>
             <label htmlFor="Question" className="sr-only">
