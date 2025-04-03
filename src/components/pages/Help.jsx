@@ -168,7 +168,7 @@ const Help = () => {
 
       {/* Contact Us Section */}
       <div className="min-h-screen bg-white p-10 lg:p-20">
-        <div className="border-0 rounded-2xl shadow-lg">
+        <div className="border-0 rounded-2xl">
           <section className="text-center mb-10" data-aos="fade-up">
             <h2 className="text-4xl font-bold text-gray-900">CONTACT US</h2>
             <hr className="w-20 mx-auto mt-5 border-t-4 border-gray-900" />
@@ -206,7 +206,7 @@ const Help = () => {
                   type="text"
                   id="name"
                   placeholder="Enter your name"
-                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
                   required
                 />
               </div>
@@ -217,7 +217,7 @@ const Help = () => {
                   type="email"
                   id="email"
                   placeholder="checkify.kh@gmail.com"
-                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
                   required
                 />
               </div>
@@ -228,7 +228,7 @@ const Help = () => {
                   id="message"
                   placeholder="Message"
                   rows="4"
-                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
                   required
                 />
               </div>
