@@ -23,7 +23,7 @@ const Feature = () => {
       <Navbar />
       <main className="pt-20">
         {/* Section 1 */}
-        <section className="h-auto min-h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 py-10">
+        <section className="h-auto min-h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 lg:pr-0 py-10">
           <div data-aos="fade-right">
             <h2 className="font-bold text-4xl lg:text-5xl leading-snug mb-5 text-white">
               Modernize Your Workplace with an Automated Attendance System
@@ -36,12 +36,12 @@ const Feature = () => {
             </p>
           </div>
           <div data-aos="fade-left" className="flex justify-center">
-            <img src={pic1} alt="" className="w-full max-w-[400px] object-cover" />
+            <img src={pic1} alt="" className="w-full max-w-[400px] lg:max-w-[450px] object-cover" />
           </div>
         </section>
 
         {/* Section 2 */}
-        <section className="h-auto min-h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 items-center px-5 lg:px-20 py-10">
+        <section className="h-auto min-h-[80vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 items-center px-5 lg:px-20 py-10">
           <div data-aos="fade-right">
             <h2 className="font-bold text-4xl lg:text-5xl leading-snug mb-5">
               Employee List Management
@@ -57,12 +57,12 @@ const Feature = () => {
             </p>
           </div>
           <div data-aos="fade-left" className="flex justify-center">
-            <img src={pic2} alt="" className="w-full max-w-[400px] object-cover" />
+            <img src={pic2} alt="" className="w-full max-w-[400px] lg:max-w-[600px] object-cover" />
           </div>
         </section>
 
         {/* Section 3 */}
-        <section className="h-auto min-h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 py-10">
+        <section className="h-auto min-h-[50vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 py-10">
           <div data-aos="fade-right" className="flex justify-center">
             <img src={pic1} alt="" className="w-full max-w-[400px] object-cover" />
           </div>
@@ -83,7 +83,7 @@ const Feature = () => {
         </section>
 
         {/* Section 4 */}
-        <section className="h-auto min-h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 items-center px-5 lg:px-20 py-10">
+        <section className="h-auto min-h-[70vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 items-center px-5 lg:px-20 py-10">
           <div data-aos="fade-right">
             <h2 className="font-bold text-4xl lg:text-5xl leading-snug mb-5">
               Leave Request Management
@@ -102,8 +102,9 @@ const Feature = () => {
             <img src={pic4} alt="" className="w-full max-w-[400px] object-cover" />
           </div>
         </section>
-
+        
         <Footer />
+    
       </main>
     </>
   );

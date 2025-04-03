@@ -16,7 +16,7 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop Navigation Links */}
-      <div className="hidden md:flex flex-row gap-8 text-[16px] lg:text-[18px] font-bold text-[#043873]">
+      <div className="hidden md:flex flex-row gap-8 text-[16px] lg:text-[18px] font-semibold text-[#043873]">
         <Link to="/feature">
           <h3 className="hover:underline hover:decoration-4 hover:underline-offset-4 hover:decoration-[#043873] cursor-pointer">
             FEATURE

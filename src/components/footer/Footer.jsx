@@ -6,7 +6,7 @@ import istad from "../../assets/logo-ISTAD-01.png";
 const Footer = () => {
   return (
     <footer className="xl:h-[38vh] bg-[#043873] text-white py-7">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-0">
         <div className="flex flex-wrap justify-between gap-5">
           {/* Logo Section */}
           <div className="w-full md:w-auto mb-5 md:mb-0 flex justify-center md:justify-start">
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="border-t border-blue-900 mt-4 pt-4 text-center text-xs">
+        <div className="border-t border-blue-900 mt-4 pt-2 px-0 text-center text-xs bg-primary-color">
           <p>©2025 Checkify™. All Rights Reserved</p>
         </div>
       </div>

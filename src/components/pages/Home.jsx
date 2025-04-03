@@ -7,7 +7,7 @@ import Button from '../button/Button'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import pic1 from "../../assets/landing-pic-1.png";
+import pic1 from "../../assets/home-pic-10.png";
 import pic2 from "../../assets/landing-pic-2.png";
 import pic3 from "../../assets/landing-pic-3.png";
 import pic4 from "../../assets/landing-pic-4.png";
@@ -30,7 +30,7 @@ const Home = () => {
       <main className="text-white pt-20">
         {/* Hero Section */}
         <section
-          className=" h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20"
+          className=" h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 lg:pr-0"
           data-aos="fade-up"
         >
           <div>
@@ -51,7 +51,7 @@ const Home = () => {
             <img
               src={pic1}
               alt="Hero"
-              className="w-full max-w-md lg:max-w-lg cursor-pointer"
+              className="w-[800px] max-w-md lg:max-w-[1000px] cursor-pointer"
             />
           </div>
         </section>
@@ -191,7 +191,8 @@ const Home = () => {
         </section>
 
         {/* Footer Section */}
-          <Footer />
+        <Footer />
+          
       </main>
     </>
   );

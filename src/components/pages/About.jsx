@@ -41,7 +41,7 @@ const About = () => {
       <main className="pt-20">
         {/* Section 1: About Us */}
         <section
-          className="h-auto min-h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 text-white"
+          className="h-auto min-h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 lg:pr-0 text-white"
           data-aos="fade-up"
         >
           <div>
@@ -54,7 +54,7 @@ const About = () => {
             </p>
           </div>
           <div>
-            <img src={pic1} alt="" className="w-full max-w-[400px] object-cover" />
+            <img src={pic1} alt="" className="w-[800px] max-w-[400px] lg:max-w-[600px] object-cover" />
           </div>
         </section>
 
