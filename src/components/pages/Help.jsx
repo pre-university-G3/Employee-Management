@@ -67,7 +67,7 @@ const Help = () => {
               autoComplete="off"
               className="w-[60%] rounded-md bg-white px-4 py-2 text-base text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
-            <button className="bg-white border-2 border-blue-950 px-6 py-3 mt-5 hover:bg-blue-950 hover:text-white transition duration-300 transform hover:scale-105">
+            <button className="bg-white border-2 border-blue-950 px-6 py-3 mt-5 hover:bg-blue-950 hover:text-white transition duration-300 transform hover:scale-105 cursor-pointer">
               Submit
             </button>
           </section>
