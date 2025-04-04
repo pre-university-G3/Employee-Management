@@ -16,36 +16,36 @@ import {
 // --- Reusable Components (Keep StatCard, StatusBadge as before) ---
 // --- SidebarItem (Keep as before) ---
 const SidebarItem = (
-  { icon, text, active, href = "#", onClick } // Added onClick prop
+  { icon, text, Approve, href = "#", onClick } // Added onClick prop
 ) => (
   <a
     href={href}
     onClick={onClick} // Add onClick handler
     className={`flex items-center px-4 py-3 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out group ${
-      active
+      Approve
         ? "bg-blue-700 text-white"
         : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
     }`}
   >
     {React.createElement(icon, {
       className: `w-5 h-5 mr-3 flex-shrink-0 ${
-        active ? "text-white" : "text-gray-400 group-hover:text-gray-500"
+        Approve ? "text-white" : "text-gray-400 group-hover:text-gray-500"
       }`,
     })}
     <span className="truncate">{text}</span>
     <HiOutlineChevronRight
       className={`w-4 h-4 ml-auto text-gray-400 ${
-        active ? "text-white" : "opacity-0 group-hover:opacity-100"
+        Approve ? "text-white" : "opacity-0 group-hover:opacity-100"
       } transition-opacity`}
     />
   </a>
 );
 const StatusBadge = ({ status }) => {
-  const isActive = status === "Active";
+  const isApprove = status === "Approve";
   return (
     <span
       className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full whitespace-nowrap ${
-        isActive ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+        isApprove ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
       }`}
     >
       {status}
@@ -57,70 +57,62 @@ const employeeData = [
   {
     id: "I-0001",
     name: "Jane Cooper",
-    department: "Cyber Security",
-    email: "jane@microsoft.com",
-    joiningDate: "26 March 2025",
-    status: "Active",
+    StartDate: "7-April-2015",
+    StartEnd: "7-April-2015",
+    status: "Approved",
   },
   {
     id: "I-0002",
     name: "Doe Laly",
-    department: "Web Design",
-    email: "floyd@yahoo.com",
-    joiningDate: "23 April 2023",
-    status: "Inactive",
+    StartDate: "8-April-2015",
+    StartEnd: "8-April-2015",
+    status: "Deny",
   },
   {
     id: "I-0003",
     name: "John reach",
-    department: "Full Stack Developer",
-    email: "ronald@adobe.com",
-    joiningDate: "03 Set 2024",
-    status: "Inactive",
-  },
-  {
-    id: "I-0004",
-    name: "Koko Tesla",
-    department: "Mobile Developer",
-    email: "marvin@tesla.com",
-    joiningDate: "05 Oct 2023",
-    status: "Active",
+    StartDate: "8-April-2015",
+    StartEnd: "9-April-2015",
+    status: "Deny",
   },
   {
     id: "I-0005",
-    name: "Jack bot",
-    department: "Web Design",
-    email: "jerome@google.com",
-    joiningDate: "23 Nov 2022",
-    status: "Active",
+    name: "Koko Tesla",
+    StartDate: "8-April-2015",
+    StartEnd: "9-April-2015",
+    status: "Approve",
   },
   {
     id: "I-0006",
-    name: "Mic Roza",
-    department: "Full Stack Developer",
-    email: "kathryn@microsoft.com",
-    joiningDate: "12 Jan 2019",
-    status: "Active",
+    name: "Jack bot",
+    StartDate: "8-April-2015",
+    StartEnd: "20-April-2015",
+    status: "Preding",
   },
   {
     id: "I-0007",
-    name: "Yan hook",
-    department: "Web Design",
-    email: "jacob@yahoo.com",
-    joiningDate: "29 Feb 2023",
-    status: "Active",
+    name: "Mic Roza",
+    StartDate: "8-April-2015",
+    StartEnd: " 21-April-2015",
+    status: "Preding",
   },
   {
     id: "I-0008",
+    name: "Yan hook",
+    StartDate: "8-April-2015",
+    StartEnd: " 22-April-April",
+    status: "Approve",
+  },
+  {
+    id: "I-0009",
     name: "Cheat xae",
-    department: "Web Design",
-    email: "kristin@facebook.com",
-    joiningDate: "12 June 2022",
-    status: "Inactive",
+    StartDate: "8-April-2015",
+    StartEnd: "28-April-2022 ",
+    status: "Deny",
   },
 ];
 
-function EmployeeDashboard() {
+function LeaveRequest() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State for mobile sidebar
 
   // Function to close sidebar, can be passed to links if needed
@@ -190,7 +182,6 @@ function EmployeeDashboard() {
           <SidebarItem
             icon={HiOutlineUsers}
             text="Employee"
-            active={true}
             onClick={closeSidebar}
           />
           <SidebarItem
@@ -201,6 +192,7 @@ function EmployeeDashboard() {
           <SidebarItem
             icon={HiOutlineDocumentText}
             text="Leave request"
+            Approve={true}
             onClick={closeSidebar}
           />
         </nav>
@@ -216,8 +208,6 @@ function EmployeeDashboard() {
           </a>
         </div>
       </div>
-
-      
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header Bar */}
@@ -244,7 +234,7 @@ function EmployeeDashboard() {
             </svg>
           </button>
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-800 truncate">
-            Employee
+            Attendance
           </h1>
           <button className="p-2 ml-auto bg-blue-100 rounded-full text-blue-600 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
             <HiOutlineBell className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -301,23 +291,15 @@ function EmployeeDashboard() {
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider inline-flex items-center"
-                    >
-                      {" "}
-                      Department{" "}
-                      <HiOutlineChevronDown className="w-4 h-4 ml-1" />
-                    </th>
-                    <th
-                      scope="col"
                       className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Email
+                      Start Date
                     </th>
                     <th
                       scope="col"
                       className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap"
                     >
-                      Date of Joining
+                      Start End
                     </th>
                     <th
                       scope="col"
@@ -336,14 +318,11 @@ function EmployeeDashboard() {
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
                         {employee.name}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
-                        {employee.department}
-                      </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700 truncate max-w-xs">
-                        {employee.email}
+                        {employee.StartDate}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
-                        {employee.joiningDate}
+                        {employee.StartEnd}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm">
                         <StatusBadge status={employee.status} />
@@ -399,4 +378,4 @@ function EmployeeDashboard() {
   );
 }
 
-export default EmployeeDashboard;
+export default LeaveRequest;
