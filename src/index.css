@@ -7,6 +7,11 @@
     --color-primary-color: #043873;
 }
 
+.action-btn {
+    @apply h-20 md:h-24 text-lg font-bold rounded-2xl transform transition-transform 
+           hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+
 *{
 
     font-family: Montserrat, serif;

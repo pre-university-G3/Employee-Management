@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -20,7 +21,7 @@ const LoginFormik = () => {
   // Predefined credentials for Admin and Employee
   const credentials = {
     admin: { username: "admin", password: "admin123" },
-    employee: { username: "meypanhawath", password: "password123" },
+    employee: { username: "employee", password: "employee123" },
   };
 
   // Validation schema using Yup
@@ -64,12 +65,14 @@ const LoginFormik = () => {
           data-aos="fade-right"
         >
           {/* Logo */}
+          <Link to='/'>
           <img
             src={Image}
             alt="Logo"
             className="max-w-[120px] md:max-w-[200px] w-full h-auto self-start animate-bounce"
             data-aos="zoom-in"
           />
+          </Link>
           {/* Welcome Text */}
           <div
             className="w-full flex flex-col items-center mt-8 md:mt-12"
@@ -154,7 +157,7 @@ const LoginFormik = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="bg-primary-color text-white py-2 md:py-4 rounded-lg hover:bg-[#032a5e] hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-base md:text-lg"
+                  className="bg-primary-color text-white py-2 md:py-4 rounded-lg hover:bg-[#032a5e] hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-base md:text-lg cursor-pointer"
                 >
                   Login Now
                 </button>

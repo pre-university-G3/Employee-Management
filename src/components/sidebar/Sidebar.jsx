@@ -12,7 +12,7 @@ const Sidebar = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-[30px] h-[48px] text-white"
+                    className="w-[24px] h-[36px] text-white"
                 >
                     <path
                         strokeLinecap="round"
@@ -32,7 +32,7 @@ const Sidebar = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-[30px] h-[48px]"
+                    className="w-[24px] h-[36px]"
                 >
                     <path
                         strokeLinecap="round"
@@ -46,8 +46,8 @@ const Sidebar = () => {
             href: 'javascript:void(0)',
             name: 'Account',
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[30px] h-[48px]">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-[24px] h-[36px]">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                 </svg>
             ),
         },
@@ -64,7 +64,7 @@ const Sidebar = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-[30px] h-[60px] text-black"
+                    className="w-[24px] h-[36px] text-black"
                 >
                     <path
                         strokeLinecap="round"
@@ -78,18 +78,18 @@ const Sidebar = () => {
 
     return (
         <>
-            <nav className="w-full h-full border-r pt-9 sm:w-[420px]">
+            <nav className="w-full h-full border-r pt-9 sm:w-[300px]">
                 <div className="flex flex-col h-full">
-                    <div className="h-20 flex items-center px-8">
+                    <div className="h-16 flex items-center px-6">
                         <a href="javascript:void(0)" className="flex items-center gap-3">
                             <img
                                 src={VectorIcon}
-                                width={40}
-                                height={400}
+                                width={32}
+                                height={32}
                                 className="mx-auto"
                                 alt="Vector Icon"
                             />
-                            <h3 className="font-bold text-[36px] font-mon">DashBoard</h3>
+                            <h3 className="font-bold text-[28px] font-mon">DashBoard</h3>
                         </a>
                     </div>
                     <div className="flex-1 flex flex-col h-full overflow-auto mt-4">
@@ -103,9 +103,10 @@ const Sidebar = () => {
                                 >
                                     <a
                                         href={item.href}
-                                        className={`flex items-center text-[20px] gap-x-2 p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150 ${
-                                            item.name === 'Dashboard' ? 'bg-[#043873] text-white text-[20px] hover:bg-green-500' : 'text-gray-600'
-                                        }`}                                    >
+                                        className={`flex items-center text-[18px] gap-x-2 p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150 ${
+                                            item.name === 'Dashboard' ? 'bg-[#043873] text-white text-[18px] hover:bg-green-500' : 'text-gray-600'
+                                        }`}
+                                    >
                                         <div className="text-gray-500">{item.icon}</div>
                                         {item.name}
                                     </a>
@@ -118,7 +119,7 @@ const Sidebar = () => {
                                     <li key={idx}>
                                         <a
                                             href={item.href}
-                                            className="flex items-center gap-x-2 text-black text-[24px] p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150"
+                                            className="flex items-center gap-x-2 text-black text-[20px] p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150"
                                         >
                                             <div className="text-black">{item.icon}</div>
                                             {item.name}

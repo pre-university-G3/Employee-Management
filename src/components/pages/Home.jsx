@@ -194,7 +194,7 @@ const Home = () => {
               <img 
               src={demo}
                alt="" 
-               className="w-30 h-30 rounded-full float-left mt-5"
+               className="w-30 h-30 rounded-full float-left mt-5 object-cover"
                />
               <h3 className="text-[#043873] font-bold mt-5 text-2xl">Hout Sokleng</h3>
               <p className="pl-33 text-start text-black">Head of Talent Acquisition, North America</p>
@@ -213,7 +213,7 @@ const Home = () => {
               <img 
               src={demo}
                alt="" 
-               className="w-30 h-30 rounded-full float-left mt-5"
+               className="w-30 h-30 rounded-full float-left mt-5 object-cover"
                />
               <h3 className="text-white font-bold mt-5 text-2xl">Hout Sokleng</h3>
               <p className="pl-33 text-start text-whtie">Head of Talent Acquisition, North America</p>
@@ -232,7 +232,7 @@ const Home = () => {
               <img 
               src={demo}
                alt="" 
-               className="w-30 h-30 rounded-full float-left mt-5"
+               className="w-30 h-30 rounded-full float-left mt-5 object-cover"
                />
               <h3 className="text-white font-bold mt-5 text-2xl">Hout Sokleng</h3>
               <p className="pl-33 text-start text-whtie">Head of Talent Acquisition, North America</p>
