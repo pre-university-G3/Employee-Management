@@ -5,6 +5,7 @@ import Feature from './components/pages/Feature';
 import About from './components/pages/About';
 import Help from './components/pages/Help';
 import AdminDB from './components/dashboard/AdminDB'
+import EmpDB from './components/dashboard/EmpDB'
 import EmployeeInfo from './components/dashboard-content/EmployeeInfo'
 import Empdashboard from './components/dashboard-content/Empdashboard'
 import LoginFormik from './components/login/LoginFormik'
@@ -26,7 +27,7 @@ const App = () => {
         <Route path='/feature' element={<Feature />} />
         <Route path='/about' element={<About />} />
         <Route path='/help' element={<Help />} />
-        <Route path='/empDashboard' element={<Empdashboard />} />
+        <Route path='/empDashboard' element={<EmpDB />} />
         <Route path='/grid' element={<Grid />} />
         <Route path='/adminDashboard' element={<AdminDB />} />
         <Route path='/empInfo' element={<EmployeeInfo />} />
