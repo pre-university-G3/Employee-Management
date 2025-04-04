@@ -9,7 +9,7 @@ import EmployeeInfo from './components/dashboard-content/EmployeeInfo'
 import Empdashboard from './components/dashboard-content/Empdashboard'
 import LoginFormik from './components/login/LoginFormik'
 import ProgressScrollBar from './components/scroll/ProgressScrollBar';
-import Sidebar2 from './components/sidebar/Sidebar2';
+import SidebarTest from './components/sidebar/SidebarTest';
 
 import Login from './components/login/Login';
 import Card from './components/card/Card';
@@ -31,7 +31,7 @@ const App = () => {
         <Route path='/adminDashboard' element={<AdminDB />} />
         <Route path='/empInfo' element={<EmployeeInfo />} />
         <Route path='/loginformik' element={<LoginFormik />} />
-        <Route path='/sidebar' element={<Sidebar2 />} />
+        <Route path='/sidebar' element={<SidebarTest />} />
     </Routes>
     <ProgressScrollBar />
 
