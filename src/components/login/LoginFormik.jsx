@@ -20,8 +20,8 @@ const LoginFormik = () => {
 
   // Predefined credentials for Admin and Employee
   const credentials = {
-    admin: { username: "admin", password: "admin123" },
-    employee: { username: "employee", password: "employee123" },
+    admin: { username: "admin", password: "password123" },
+    employee: { username: "employee", password: "password123" },
   };
 
   // Validation schema using Yup
