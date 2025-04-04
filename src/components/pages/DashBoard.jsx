@@ -8,9 +8,9 @@ import Cclock from '../../assets/cloudclock.png';
 import Calenclock from '../../assets/calenclock.png';
 import { FaHeartbeat } from "react-icons/fa";
 
-export default function DashBoard() {
+export default function DashBoard({ onToggleSidebar }) {
     const [time, setTime] = useState(new Date());
-    // Update time every second
+    
     useEffect(() => {
         const timer = setInterval(() => {
         setTime(new Date());
@@ -18,12 +18,11 @@ export default function DashBoard() {
         return () => clearInterval(timer);
     }, []);
 
-    // Format the date and day
     const formattedDate = time.toLocaleDateString('en-KH', {
-        weekday: 'long', // e.g., "Monday"
+        weekday: 'long',
         year: 'numeric',
-        month: 'long', // e.g., "March"
-        day: 'numeric', // e.g., "27"
+        month: 'long',
+        day: 'numeric',
     });
     return (
     <>
@@ -31,33 +30,53 @@ export default function DashBoard() {
         {/* Dashboard */}
         <section>
             <div className="p-4 sm:p-6 md:pt-8 md:px-10 h-[70px] sm:h-[85px] md:h-[95px]">
-              {/* Page Title */}
               <h1 className="text-[32px] sm:text-[42px] md:text-[52px] font-bold font-mon">Dashboard</h1>
             </div>
         </section>
         
-        {/* Bell */}
-        <section>
-            <div className="flex justify-end pr-4 sm:pr-10 md:pr-25">
-              <button className="relative p-2 sm:p-3 rounded-full flex bg-gray-100 hover:bg-gray-200">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 sm:h-5 sm:w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                  />
-                </svg>
-                <span className="absolute top-1 sm:top-2 right-2 sm:right-3 w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-blue-500"></span>
-              </button>
-            </div>
+        {/* Top Bar with Menu and Notification */}
+        <section className="flex justify-between items-center pr-4 sm:pr-10 md:pr-25">
+          {/* Hamburger Menu for Mobile */}
+          <button 
+            onClick={onToggleSidebar}
+            className="lg:hidden p-2 ml-4 rounded-full bg-gray-100 hover:bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          {/* Notification Bell */}
+          <button className="relative p-2 sm:p-3 rounded-full flex bg-gray-100 hover:bg-gray-200">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 sm:h-5 sm:w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+              />
+            </svg>
+            <span className="absolute top-1 sm:top-2 right-2 sm:right-3 w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-blue-500"></span>
+          </button>
         </section>
+
         
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 grid-rows-auto gap-4 sm:gap-6 md:gap-8 lg:gap-8 p-4 sm:p-6 md:pl-20 md:pr-20 lg:pl-30 lg:pr-30 md:pt-8 md:pb-0">
             {/* First Box */}
