@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Sidebar from './Sidebar'
-import Dashboard from './Dashboard'
+import Sidebar from './SideBar'
+import Dashboard from './DashBoard'
 
 export default function EMPContent() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
