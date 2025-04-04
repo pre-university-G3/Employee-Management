@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import first from '../../assets/001.png'; // Ensure this path is correct for your illustration
+import first from '../../assets/testing.png'; // Ensure this path is correct for your illustration
 import second from '../../assets/000.png';
 
 const Help = () => {
@@ -27,7 +27,7 @@ const Help = () => {
             <img
               src={first}
               alt="Help illustration"
-              className="w-50 h-50 mb-3"
+              className="w-60 h-50 mb-3"
             />
             <div className="text-lg pr-15 font-bold text-white">ANY QUESTIONS?</div>
             <div className="mb-4 pr-15 text-center text-white">
@@ -141,7 +141,7 @@ const Help = () => {
 
       {/* Contact Us Section */}
       <div className="min-h-screen bg-white p-20 mb-10 mt-5">
-        <div className="border-0 rounded-2xl shadow-lg">
+        <div className="border-0 rounded-2xl ">
           <section className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-900">CONTACT US</h2>
             <p className="font-bold pt-5 text-4xl text-gray-400">-------------------- </p>

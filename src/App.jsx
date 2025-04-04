@@ -4,7 +4,7 @@ import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
 import Card from './components/card/Card'
 import Pdcard from './components/pendngCard/Pdcard'
-import Pfcard from './components/pfcard/Pfcard'
+import Pinfor from './components/profilestaff/Pinfor'
 const App = () => {
   return (
     <>
@@ -13,7 +13,7 @@ const App = () => {
   <Card />
   <Pdcard />
   <Footer /> */}
-  <Pfcard />
+  <Pinfor />
     </>
   )
 }
