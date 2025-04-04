@@ -41,7 +41,6 @@ export default function EmpDB() {
             <div className="flex justify-end pr-4 sm:pr-10 md:pr-25">
               <button className="relative p-2 sm:p-3 rounded-full flex bg-gray-100 hover:bg-gray-200">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4 sm:h-5 sm:w-5"
                   fill="none"
                   viewBox="0 0 24 24"
