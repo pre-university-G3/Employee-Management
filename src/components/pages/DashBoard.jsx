@@ -246,7 +246,7 @@ export default function DashBoard({ onToggleSidebar }) {
   </div>
     
   {/* Box 8 */}
-  <div className="bg-[#E6EAF5] rounded-[20px] flex items-center justify-around p-4 sm:p-5 md:p-6 lg:p-6 xl:p-6 h-[150px] sm:h-[160px] md:h-[200px] lg:h-[200px] xl:h-[200px] md:col-span-2 lg:col-span-2 xl:col-span-2">
+  <div className="bg-[#E6EAF5] rounded-[20px] flex items-center justify-around p-4 sm:p-5 md:p-6 lg:p-6 xl:p-6 h-[150px] sm:h-[160px] md:h-[200px] lg:h-[200px] xl:h-[200px] sm:col-span-2 md:col-span-2 lg:col-span-2 xl:col-span-2">
     <img
       src={Avatars}
       alt="Profile"
