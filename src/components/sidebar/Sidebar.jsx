@@ -1,6 +1,7 @@
+import React from 'react'
 import VectorIcon from '../../assets/vectoricon.png';
 
-const Sidebar = () => {
+const Sidebar = ({ onClose }) => {
     const navigation = [
         {
             href: 'javascript:void(0)',
@@ -78,61 +79,80 @@ const Sidebar = () => {
     ];
 
     return (
-        <>
-            <nav className="w-full h-full border-r pt-7 lg:w-[289px]">
-                <div className="flex flex-col h-full">
-                    <div className="h-10 flex items-center px-7">
-                        <a href="javascript:void(0)" className="flex items-center gap-3">
-                            <img
-                                src={VectorIcon}
-                                width={30}
-                                height={400}
-                                className="mx-auto"
-                                alt="Vector Icon"
+        <nav className="w-full h-full border-r pt-7 lg:w-[289px] bg-white">
+            <div className="flex flex-col h-full">
+                <div className="h-10 flex items-center px-7 relative">
+                    <a href="javascript:void(0)" className="flex items-center gap-3">
+                        <img
+                            src={VectorIcon}
+                            width={30}
+                            height={400}
+                            className="mx-auto"
+                            alt="Vector Icon"
+                        />
+                        <h3 className="font-bold text-[22px] font-mon">Dashboard</h3>
+                    </a>
+                    {/* Mobile Close Button */}
+                    <button
+                        onClick={onClose}
+                        className="lg:hidden absolute right-4 text-gray-600"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M6 18L18 6M6 6l12 12"
                             />
-                            <h3 className="font-bold text-[22px] font-mon">Dashboard</h3>
-                        </a>
-                    </div>
-                    <div className="flex-1 flex flex-col h-full overflow-auto ">
-                        <ul className="px-4 text-sm font-medium flex-1 pt-10">
-                            {navigation.map((item, idx) => (
-                                <li
-                                    key={idx}
-                                    className={`${
-                                        item.name === 'Dashboard' ? 'text-[#043873]' : ''
-                                    } mb-5`}
+                        </svg>
+                    </button>
+                </div>
+                <div className="flex-1 flex flex-col h-full overflow-auto">
+                    <ul className="px-4 text-sm font-medium flex-1 pt-10">
+                        {navigation.map((item, idx) => (
+                            <li
+                                key={idx}
+                                className={`${
+                                    item.name === 'Dashboard' ? 'text-[#043873]' : ''
+                                } mb-5`}
+                            >
+                                <a
+                                    href={item.href}
+                                    className={`flex items-center text-[12px] gap-x-4 p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150 ${
+                                        item.name === 'Dashboard' ? 'bg-[#043873] text-white text-[12px] hover:bg-green-500' : 'text-gray-600'
+                                    }`}
                                 >
+                                    <div>{item.icon}</div>
+                                    {item.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    <div>
+                        <ul className="px-4 pb-4 text-sm font-medium">
+                            {navsFooter.map((item, idx) => (
+                                <li key={idx}>
                                     <a
                                         href={item.href}
-                                        className={`flex items-center text-[12px] gap-x-4 p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150 ${
-                                            item.name === 'Dashboard' ? 'bg-[#043873] text-white text-[12px] hover:bg-green-500' : 'text-gray-600'
-                                        }`}                                    >
-                                        <div className="">{item.icon}</div>
+                                        className="flex items-center gap-x-2 text-black text-[18px] p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150"
+                                    >
+                                        <div className="text-black">{item.icon}</div>
                                         {item.name}
                                     </a>
                                 </li>
                             ))}
                         </ul>
-                        <div>
-                            <ul className="px-4 pb-4 text-sm font-medium">
-                                {navsFooter.map((item, idx) => (
-                                    <li key={idx}>
-                                        <a
-                                            href={item.href}
-                                            className="flex items-center gap-x-2 text-black text-[18px] p-2 rounded-lg hover:bg-gray-200 active:bg-gray-200 duration-150"
-                                        >
-                                            <div className="text-black">{item.icon}</div>
-                                            {item.name}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
                     </div>
                 </div>
-            </nav>
-        </>
-    );
-};
+            </div>
+        </nav>
+    )
+}
 
-export default Sidebar;
+export default Sidebar

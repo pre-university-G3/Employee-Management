@@ -266,8 +266,8 @@ function AdminDB() {
             </button>
           </header>
           {/* Scrollable Content Area */}
-          <main className="flex-1 overflow-hidden bg-gray-50 p-4 md:p-6">
-            <div className="h-full flex flex-col space-y-4 md:space-y-6">
+          <main className="flex-1 overflow-auto bg-gray-50 p-4 md:p-6">
+            <div className="min-h-0 flex flex-col space-y-4 md:space-y-6">
               {/* Welcome Banner */}
               <div className="bg-indigo-50 p-4 md:p-6 rounded-lg shadow">
                 <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-indigo-900">
@@ -290,7 +290,7 @@ function AdminDB() {
               </div>
 
               {/* Attendance Section */}
-              <div className="flex-1 flex flex-col lg:flex-row gap-4 md:gap-6 overflow-hidden">
+              <div className="flex-1 flex flex-col lg:flex-row gap-4 md:gap-6 min-h-0">
                 {/* Attendance Table */}
                 <div className="flex-1 bg-white p-4 md:p-6 rounded-lg shadow-md overflow-hidden">
                   <div className="overflow-y-auto max-h-[280px]">
