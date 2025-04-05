@@ -8,7 +8,12 @@ import "aos/dist/aos.css";      // Import AOS styles
 import Chhaya from "../assets/images/Chhaya.jpg";
 import Kitya from "../assets/images/Kitya.jpg";
 import KayKeo from '../assets/images/KayKeo.jpg';
-import attendance from '../assets/images/attendance.png'
+import attendance from '../assets/images/attendance.png';
+import Kheang from '../assets/images/Kheang.jpg';
+import Leng from '../assets/images/Leng.jpg';
+import Nith from '../assets/images/Nith.jpg';
+import Sreng from '../assets/images/Sreng.jpg';
+import Sol from '../assets/images/Sol.jpg'
 
 const About = () => {
   useEffect(() => {
@@ -30,12 +35,12 @@ const About = () => {
   const teamMembers = [
     { name: "MEY PANHAWATH", role: "LEADER, FRONTEND, UX/UI", github: "https://github.com/meypanhawath" , email: "panhawath18@gmail.com" },
     { name: "LONH RAKSMEY", role: "VICE LEADER, FRONTEND, UX/UI",github: "https://github.com/LonhRaksmey" ,email: "lonhraksmey828282@gmail.com " },
-    { name: "LIM SOKHEANG", role: "LEAD UX/UI, PRESENTER",github: "https://github.com/Rejected2005" ,email: "sokheanglim2005@gmail.com" },
-    { name: "RITH SARAMANITH", role: "FRONTEND, UX/UI",github: "https://github.com/Manith991" ,email: " rithsaramanith123@gmail.com " },
+    { name: "LIM SOKHEANG", role: "LEAD UX/UI, PRESENTER",image: Kheang, github: "https://github.com/Rejected2005" ,email: "sokheanglim2005@gmail.com" },
+    { name: "RITH SARAMANITH", role: "FRONTEND, UX/UI",image: Nith, github: "https://github.com/Manith991" ,email: " rithsaramanith123@gmail.com " },
     { name: "YUOM KITYA", role: "UX/UI",image: Kitya, github: "https://github.com/kitya-yuom81" , email: " kityayuom@gmail.com " },
-    { name: "SIM SOL", role: "FRONTEND, UX/UI",github: "https://github.com/Mrrsol033", email: " mrrsol.it@gmail.com" },
-    { name: "HOUT SOKLENG", role: "FRONTEND, UX/UI",github: "https://github.com/Sokleng143", email: " houtsokleng203@gmail.com"  },
-    { name: "SAM SOKSRENG", role: "UX/UI",github: "https://github.com/Soksreng12", email: "lapawlmaug000@gmail.com "},
+    { name: "SIM SOL", role: "FRONTEND, UX/UI",image: Sol, github: "https://github.com/Mrrsol033", email: " mrrsol.it@gmail.com" },
+    { name: "HOUT SOKLENG", role: "FRONTEND, UX/UI",image: Leng, github: "https://github.com/Sokleng143", email: " houtsokleng203@gmail.com"  },
+    { name: "SAM SOKSRENG", role: "UX/UI",image: Sreng, github: "https://github.com/Soksreng12", email: "lapawlmaug000@gmail.com "},
   ];
 
   return (
