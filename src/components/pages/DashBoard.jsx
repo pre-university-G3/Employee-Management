@@ -81,7 +81,7 @@ export default function DashBoard({ onToggleSidebar }) {
         </section>
 
         {/* Main Grid Section */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 grid-rows-auto gap-4 sm:gap-4 md:gap-6 lg:gap-6 xl:gap-8 p-4 sm:px-4 sm:py-2 md:px-6 md:py-4 lg:px-8 lg:py-6 xl:p-0 xl:pt-8 xl:pl-30 xl:pr-20 xl:bg-red-500 lg:bg-green-400">
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 grid-rows-auto gap-4 sm:gap-4 md:gap-6 lg:gap-6 xl:gap-8 p-4 sm:px-4 sm:py-2 md:px-6 md:py-4 lg:px-8 lg:py-6 xl:p-0 xl:pt-8 xl:pl-30 xl:pr-20">
           
           {/* First Box */}
           <div className="bg-[#E1E5F2] text-center col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 row-span-3 h-auto sm:h-[280px] md:h-[300px] lg:h-[320px] xl:h-[300px] rounded-[20px] flex flex-col">
