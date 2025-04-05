@@ -53,7 +53,6 @@ const Sidebar = ({ onClose }) => {
                 </svg>
             ),
         },
-        // ... keep other navigation items the same ...
     ];
 
     const navsFooter = [
