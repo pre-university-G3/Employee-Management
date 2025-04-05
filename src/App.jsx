@@ -5,6 +5,8 @@ import Footer from './components/footer/Footer'
 import Card from './components/card/Card'
 import Pdcard from './components/pendngCard/Pdcard'
 import Pinfor from './components/profilestaff/Pinfor'
+import Sidebar from './components/sidebar/Sidebar'
+import Detail from './components/detailem/Detail'
 const App = () => {
   return (
     <>
@@ -12,8 +14,10 @@ const App = () => {
   <Help />
   <Card />
   <Pdcard />
-  <Footer /> */}
+  <Footer /> 
   <Pinfor />
+  <Sidebar /> */}
+  <Detail />
     </>
   )
 }
