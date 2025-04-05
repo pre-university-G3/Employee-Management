@@ -11,6 +11,8 @@ import Empdashboard from './components/dashboard-content/Empdashboard'
 import LoginFormik from './components/login/LoginFormik'
 import ProgressScrollBar from './components/scroll/ProgressScrollBar';
 import SidebarTest from './components/sidebar/SidebarTest';
+import Attendance from './components/attendance/Attendance'
+import LeaveRequest from './components/leaveRequest/LeaveRequest'
 
 import Login from './components/login/Login';
 import Card from './components/card/Card';
@@ -31,6 +33,8 @@ const App = () => {
         <Route path='/grid' element={<Grid />} />
         <Route path='/adminDashboard' element={<AdminDB />} />
         <Route path='/empInfo' element={<EmployeeInfo />} />
+        <Route path='/empAttendance' element={<Attendance />} />
+        <Route path='/empLeave' element={<LeaveRequest />} />
         <Route path='/loginformik' element={<LoginFormik />} />
         <Route path='/sidebar' element={<SidebarTest />} />
     </Routes>

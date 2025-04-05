@@ -1,79 +1,158 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom"
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Formik, Form, Field, useField } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
-import AOS from "aos"; // Import AOS for animations
-import "aos/dist/aos.css"; // Import AOS styles
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Image from "../../assets/logo-dark-v2.png";
+
+// Custom field component with animation for valid input
+const AnimatedField = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+  const inputClass =
+    meta.touched && !meta.error ? "border-green-500 animate-valid" : "border-gray-300";
+
+  return (
+    <div className="flex flex-col">
+      <label
+        htmlFor={props.id || props.name}
+        className="mb-1 md:mb-2 font-medium text-gray-700 text-base md:text-lg"
+      >
+        {label}
+      </label>
+      <Field
+        {...field}
+        {...props}
+        className={`p-2 md:p-4 rounded-lg outline-none focus:ring-2 focus:ring-primary-color transition text-base md:text-lg ${inputClass}`}
+      />
+      {meta.touched && meta.error && (
+        <div className="text-red-500 text-sm">{meta.error}</div>
+      )}
+    </div>
+  );
+};
+
+// Modal for invalid login
+const InvalidModal = ({ message, onClose }) => (
+  <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="bg-white rounded-lg shadow-lg z-10 p-6 w-11/12 max-w-sm transform transition-all duration-300 ease-in-out animate-pop-up">
+      <h3 className="text-xl font-bold text-red-600 mb-4">Login Failed</h3>
+      <p className="text-gray-700 mb-6">{message}</p>
+      <div className="flex justify-end">
+        <button
+          onClick={onClose}
+          className="px-4 py-2 bg-primary-color text-white rounded hover:bg-[#032a5e] transition cursor-pointer"
+        >
+          Okay
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+// Loading Spinner
+const LoadingSpinner = () => (
+  <div className="fixed inset-0 bg-white/80 z-50 flex items-center justify-center">
+    <div className="relative w-20 h-20">
+      <div className="absolute inset-0 border-4 border-primary-color border-t-transparent rounded-full animate-spin"></div>
+      <div className="absolute inset-2 border-4 border-primary-color/50 border-b-transparent rounded-full animate-spin-slow"></div>
+    </div>
+  </div>
+);
 
 const LoginFormik = () => {
   const navigate = useNavigate();
+  const [showInvalidModal, setShowInvalidModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      easing: "ease-in-out", // Easing function
-      once: true, // Animation happens only once
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
     });
-  }, []);
 
-  // Predefined credentials for Admin and Employee
+    const token = localStorage.getItem("authToken");
+    const userRole = localStorage.getItem("userRole");
+
+    if (token && userRole) {
+      if (userRole === "admin") {
+        navigate("/admindashboard");
+      } else if (userRole === "employee") {
+        navigate("/empDashboard");
+      }
+    }
+  }, [navigate]);
+
   const credentials = {
     admin: { username: "admin", password: "password123" },
     employee: { username: "employee", password: "password123" },
   };
 
-  // Validation schema using Yup
   const validationSchema = Yup.object({
     username: Yup.string().required("Username is required"),
     password: Yup.string().required("Password is required"),
   });
 
-  // Handle form submission
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
     const { username, password } = values;
+    let token = "";
 
-    // Check credentials
     if (
       username === credentials.admin.username &&
       password === credentials.admin.password
     ) {
-      // Navigate to Admin Dashboard
-      navigate("/admindashboard");
+      token = "admin-token-abc123";
+      localStorage.setItem("userRole", "admin");
+      localStorage.setItem("authToken", token);
+      setIsLoading(true);
+      setTimeout(() => navigate("/admindashboard"), 1500);
     } else if (
       username === credentials.employee.username &&
       password === credentials.employee.password
     ) {
-      // Navigate to Employee Dashboard
-      navigate("/empDashboard");
+      token = "employee-token-def456";
+      localStorage.setItem("userRole", "employee");
+      localStorage.setItem("authToken", token);
+      setIsLoading(true);
+      setTimeout(() => navigate("/empDashboard"), 1500);
     } else {
-      alert("Invalid username or password");
+      setShowInvalidModal(true);
     }
+
+    setSubmitting(false);
+    resetForm();
   };
 
   return (
     <main className="h-full relative flex justify-center items-center min-h-screen bg-gray-100 bg-[url('assets/Login-bg.jpg')] bg-cover bg-center p-4">
+      {showInvalidModal && (
+        <InvalidModal
+          message="Invalid username or password. Please check your credentials and try again."
+          onClose={() => setShowInvalidModal(false)}
+        />
+      )}
+      {isLoading && <LoadingSpinner />}
+
       {/* Main Container */}
       <div
         className="flex flex-col md:flex-row bg-white rounded-xl md:rounded-2xl shadow-lg w-full max-w-6xl overflow-hidden"
         data-aos="fade-up"
       >
-        {/* Left Section (Blue Background) */}
+        {/* Left Section */}
         <div
           className="bg-blue-950 flex flex-col items-start md:items-center w-full md:w-1/2 p-6 md:p-12"
           data-aos="fade-right"
         >
-          {/* Logo */}
-          <Link to='/'>
-          <img
-            src={Image}
-            alt="Logo"
-            className="max-w-[120px] md:max-w-[200px] w-full h-auto self-start animate-bounce"
-            data-aos="zoom-in"
-          />
+          <Link to="/">
+            <img
+              src={Image}
+              alt="Logo"
+              className="max-w-[120px] md:max-w-[200px] w-full h-auto self-start animate-bounce"
+              data-aos="zoom-in"
+            />
           </Link>
-          {/* Welcome Text */}
           <div
             className="w-full flex flex-col items-center mt-8 md:mt-12"
             data-aos="fade-up"
@@ -90,7 +169,7 @@ const LoginFormik = () => {
           </div>
         </div>
 
-        {/* Right Section (Login Form) */}
+        {/* Right Section */}
         <div
           className="flex flex-col w-full md:w-1/2 p-6 md:p-12"
           data-aos="fade-left"
@@ -102,64 +181,33 @@ const LoginFormik = () => {
             Login to your account
           </h2>
 
-          {/* Formik Form */}
           <Formik
             initialValues={{ username: "", password: "" }}
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            {() => (
+            {({ isSubmitting }) => (
               <Form className="flex flex-col space-y-4 md:space-y-8 w-full max-w-md">
-                {/* Username Field */}
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="username"
-                    className="mb-1 md:mb-2 font-medium text-gray-700 text-base md:text-lg"
-                  >
-                    Username
-                  </label>
-                  <Field
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder="Enter username"
-                    className="border border-gray-300 p-2 md:p-4 rounded-lg outline-none focus:ring-2 focus:ring-primary-color transition text-base md:text-lg"
-                  />
-                  <ErrorMessage
-                    name="username"
-                    component="div"
-                    className="text-red-500 text-sm"
-                  />
-                </div>
-
-                {/* Password Field */}
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="password"
-                    className="mb-1 md:mb-2 font-medium text-gray-700 text-base md:text-lg"
-                  >
-                    Password
-                  </label>
-                  <Field
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Enter password"
-                    className="border border-gray-300 p-2 md:p-4 rounded-lg outline-none focus:ring-2 focus:ring-primary-color transition text-base md:text-lg"
-                  />
-                  <ErrorMessage
-                    name="password"
-                    component="div"
-                    className="text-red-500 text-sm"
-                  />
-                </div>
-
-                {/* Submit Button */}
+                <AnimatedField
+                  label="Username"
+                  name="username"
+                  type="text"
+                  placeholder="Enter username"
+                  id="username"
+                />
+                <AnimatedField
+                  label="Password"
+                  name="password"
+                  type="password"
+                  placeholder="Enter password"
+                  id="password"
+                />
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="bg-primary-color text-white py-2 md:py-4 rounded-lg hover:bg-[#032a5e] hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg text-base md:text-lg cursor-pointer"
                 >
-                  Login Now
+                  {isSubmitting ? "Logging in..." : "Login Now"}
                 </button>
               </Form>
             )}

@@ -1,5 +1,6 @@
 import React, { useState } from "react"; // Import useState
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
 import {
   HiOutlineViewGrid,
   HiOutlineUsers,
@@ -17,36 +18,36 @@ import {
 // --- Reusable Components (Keep StatCard, StatusBadge as before) ---
 // --- SidebarItem (Keep as before) ---
 const SidebarItem = (
-  { icon, text, active, href = "#", onClick } // Added onClick prop
+  { icon, text, Present, href = "#", onClick } // Added onClick prop
 ) => (
   <a
     href={href}
     onClick={onClick} // Add onClick handler
     className={`flex items-center px-4 py-3 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out group ${
-      active
+      Present
         ? "bg-primary-color text-white"
         : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
     }`}
   >
     {React.createElement(icon, {
       className: `w-5 h-5 mr-3 flex-shrink-0 ${
-        active ? "text-white" : "text-gray-400 group-hover:text-gray-500"
+        Present ? "text-white" : "text-gray-400 group-hover:text-gray-500"
       }`,
     })}
     <span className="truncate">{text}</span>
     <HiOutlineChevronRight
       className={`w-4 h-4 ml-auto text-gray-400 ${
-        active ? "text-white" : "opacity-0 group-hover:opacity-100"
+        Present ? "text-white" : "opacity-0 group-hover:opacity-100"
       } transition-opacity`}
     />
   </a>
 );
 const StatusBadge = ({ status }) => {
-  const isActive = status === "Active";
+  const isPresent = status === "Present";
   return (
     <span
     className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full whitespace-nowrap ${
-      isActive ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+      isPresent ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
     }`}
   >
     {status}
@@ -58,54 +59,54 @@ const employeeData = [
   {
     id: "I-0001",
     name: "Jane Cooper",
-    department: "Cyber Security",
-    email: "jane@microsoft.com",
-    joiningDate: "26 March 2025",
-    status: "Active",
+    date: "28/03/2025",
+    checkIn: "7:30 am",
+    checkOut: "5:30 pm",
+    status: "Present",
   },
   {
     id: "I-0002",
     name: "Doe Laly",
-    department: "Web Design",
-    email: "floyd@yahoo.com",
-    joiningDate: "23 April 2023",
-    status: "Inactive",
+    date: "27/03/2025",
+    checkIn: "7:30 am",
+    checkOut: "5:00 pm",
+    status: "Absent",
   },
   {
     id: "I-0003",
     name: "John reach",
-    department: "Full Stack Developer",
-    email: "ronald@adobe.com",
-    joiningDate: "03 Set 2024",
-    status: "Inactive",
-  },
-  {
-    id: "I-0004",
-    name: "Koko Tesla",
-    department: "Mobile Developer",
-    email: "marvin@tesla.com",
-    joiningDate: "05 Oct 2023",
-    status: "Active",
+    date: "28/03/2025",
+    checkIn: "7:30 am",
+    checkOut: "5:40 pm",
+    status: "Present",
   },
   {
     id: "I-0005",
-    name: "Jack bot",
-    department: "Web Design",
-    email: "jerome@google.com",
-    joiningDate: "23 Nov 2022",
-    status: "Active",
+    name: "Koko Tesla",
+    date: "28/03/2025",
+    checkIn: "7:30 am",
+    checkOut: "6:00 pm",
+    status: "Present",
   },
   {
     id: "I-0006",
+    name: "Jack bot",
+    date: "28/03/2025",
+    checkIn: "7:30 am",
+    checkOut: "5:00 pm",
+    status: "Present",
+  },
+  {
+    id: "I-0007",
     name: "Mic Roza",
-    department: "Full Stack Developer",
-    email: "kathryn@microsoft.com",
-    joiningDate: "12 Jan 2019",
-    status: "Active",
+    date: "28/03/2025",
+    checkIn: "7:30 am",
+    checkOut: "5:00 pm",
+    status: "Present",
   },
 ];
 
-function EmployeeInfo() {
+function Attendance() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State for mobile sidebar
 
   // Function to close sidebar, can be passed to links if needed
@@ -167,7 +168,6 @@ function EmployeeInfo() {
         {/* Sidebar Navigation */}
         <nav className="flex-1 px-2 md:px-4 py-4 space-y-2 overflow-y-auto">
           {/* Pass closeSidebar to items if clicking them should close the menu on mobile */}
-
           <Link to='/adminDashboard'>
           <SidebarItem
             icon={HiOutlineViewGrid}
@@ -176,29 +176,29 @@ function EmployeeInfo() {
           />
           </Link>
 
+          <Link to='/empInfo'>
           <SidebarItem
             icon={HiOutlineUsers}
             text="Employee"
-            active={true}
-            onClick={closeSidebar}
-          />
-
-          <Link to='/empAttendance'>
-          <SidebarItem
-            icon={HiOutlineCalendar}
-            text="Attendance"
             onClick={closeSidebar}
           />
           </Link>
+          
+          <SidebarItem
+            icon={HiOutlineCalendar}
+            text="Attendance"
+            Present={true}
+            onClick={closeSidebar}
+          />
 
-          <Link to="/empLeave">
+          <Link to='/empLeave'>
           <SidebarItem
             icon={HiOutlineDocumentText}
             text="Leave request"
             onClick={closeSidebar}
           />
           </Link>
-
+          
         </nav>
 
         {/* Sidebar Footer */}
@@ -212,8 +212,6 @@ function EmployeeInfo() {
           </a>
         </div>
       </div>
-
-      
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
           {/* Header Bar */}
@@ -239,7 +237,7 @@ function EmployeeInfo() {
               </svg>
             </button>
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-xl font-bold text-primary-color truncate">
-              Employee
+              Attendance
             </h1>
             <button className="p-1 ml-auto bg-blue-100 rounded-full text-primary-color hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
               <HiOutlineBell className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -299,20 +297,20 @@ function EmployeeInfo() {
                       className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider inline-flex items-center"
                     >
                       {" "}
-                      Department{" "}
+                      Date{" "}
                       <HiOutlineChevronDown className="w-4 h-4 ml-1" />
                     </th>
                     <th
                       scope="col"
                       className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Email
+                      Checkin
                     </th>
                     <th
                       scope="col"
                       className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap"
                     >
-                      Date of Joining
+                      Checkout
                     </th>
                     <th
                       scope="col"
@@ -332,13 +330,13 @@ function EmployeeInfo() {
                         {employee.name}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
-                        {employee.department}
+                        {employee.date}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700 truncate max-w-xs">
-                        {employee.email}
+                        {employee.checkIn}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
-                        {employee.joiningDate}
+                        {employee.checkOut}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm">
                         <StatusBadge status={employee.status} />
@@ -394,4 +392,4 @@ function EmployeeInfo() {
   );
 }
 
-export default EmployeeInfo;
+export default Attendance;

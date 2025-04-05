@@ -1,27 +1,101 @@
 import React, { useState, useEffect } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import emailjs from "emailjs-com";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
-import Submit from "../button/Submit";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// import first from "../../assets/help-pic-2.png";
+// Assets
 import second from "../../assets/help-pic-1.png";
 import question from "../../assets/question-5.gif";
 
+// Success Modal Component (no dark overlay)
+const SubmitSuccessModal = ({ onClose }) => {
+  return (
+    <div
+      className="fixed inset-0 flex items-center justify-center z-50"
+      data-aos="fade-in"
+    >
+      <div className="bg-white p-8 rounded-lg shadow-lg w-80 text-center">
+        <h2 className="text-2xl font-bold mb-4">Submitted Successfully!</h2>
+        <p className="mb-6">Your message has been sent.</p>
+        <button
+          onClick={onClose}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        >
+          Okay
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const Help = () => {
   const [openQuestion, setOpenQuestion] = useState(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  // State for FAQ question (left section)
+  const [faqQuestion, setFaqQuestion] = useState("");
 
-  // Initialize AOS for animations
+  // Initialize AOS and EmailJS on mount
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true, // Animation happens only once
-    });
+    AOS.init({ duration: 1000, once: true });
+    emailjs.init("8UKbIqfT2ZME3kWOm"); // Your EmailJS public key (for Contact Us form)
   }, []);
 
+  // Toggle FAQ items in right section
   const toggleQuestion = (index) => {
-    setOpenQuestion(openQuestion === index ? null : index);
+    setOpenQuestion((prev) => (prev === index ? null : index));
+  };
+
+  // Handler for FAQ submission (left section) - now only clears the input and shows the modal
+  const handleFaqSubmit = () => {
+    if (!faqQuestion.trim()) {
+      console.error("FAQ question is empty");
+      return;
+    }
+    console.log("Submitting FAQ question:", faqQuestion);
+    // Instead of sending an email, we just clear the input and show the modal.
+    setFaqQuestion("");
+    setShowSuccessModal(true);
+  };
+
+  // Formik initial values and validation schema for Contact Us form
+  const initialValues = {
+    name: "",
+    email: "",
+    message: "",
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    message: Yup.string().required("Message is required"),
+  });
+
+  // Handler for Contact Us form submission
+  const handleSubmit = (values, { resetForm }) => {
+    console.log("Submitting Contact form:", values);
+    emailjs
+      .send(
+        "service_rzh5wvo",  // Your EmailJS service ID
+        "template_hq7sa4d", // Your Contact Us EmailJS template ID
+        values,
+        "8UKbIqfT2ZME3kWOm" // Your EmailJS public key
+      )
+      .then(
+        (result) => {
+          console.log("Contact email sent:", result.text);
+          setShowSuccessModal(true);
+          resetForm();
+        },
+        (error) => {
+          console.error("Error sending contact email:", error);
+        }
+      );
   };
 
   return (
@@ -30,7 +104,7 @@ const Help = () => {
 
       {/* FAQ Section */}
       <nav className="p-5 min-h-screen bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2]">
-        {/* Title */}
+        {/* FAQ Title */}
         <div
           className="text-4xl pt-20 font-bold text-white text-center py-6"
           data-aos="fade-down"
@@ -38,9 +112,8 @@ const Help = () => {
           Frequently Asked Questions
         </div>
 
-        {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Left Section */}
+          {/* Left Section: FAQ Submission */}
           <section
             className="p-5 flex flex-col items-center"
             data-aos="fade-right"
@@ -54,36 +127,40 @@ const Help = () => {
               ANY QUESTIONS?
             </div>
             <div className="mb-5 text-center text-white">
-              You can ask anything you want to know
+              You can ask anything you want to know.
             </div>
-            <label htmlFor="Question" className="sr-only">
-              Question
+            <label htmlFor="faqQuestion" className="sr-only">
+              Your Question
             </label>
             <input
-              id="Question"
-              name="Question"
+              id="faqQuestion"
+              name="faqQuestion"
               type="text"
-              required
-              placeholder="Question"
+              value={faqQuestion}
+              onChange={(e) => setFaqQuestion(e.target.value)}
+              placeholder="Enter your question"
               autoComplete="off"
               className="w-[60%] rounded-md bg-white px-4 py-2 text-base text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
-            <button className="bg-white border-2 border-blue-950 px-6 py-3 mt-5 hover:bg-blue-950 hover:text-white transition duration-300 transform hover:scale-105 cursor-pointer">
+            <button
+              onClick={handleFaqSubmit}
+              className="bg-white border-2 border-blue-950 px-6 py-3 mt-5 hover:bg-blue-950 hover:text-white transition duration-300 transform hover:scale-105 cursor-pointer"
+            >
               Submit
             </button>
           </section>
 
-          {/* Right Section - FAQ Questions */}
+          {/* Right Section: FAQ Display */}
           <section
             className="p-5 flex flex-col pt-20 gap-4 place-content-center"
             data-aos="fade-left"
           >
-            {/* Question 1 */}
+            {/* FAQ Item 1 */}
             <div className="p-4 bg-white rounded-md text-lg text-[#043873] font-bold flex justify-between items-center">
               <span>What is the Employee Management System?</span>
               <button onClick={() => toggleQuestion(1)}>
                 <svg
-                  className={`w-5 h-5 text-[#043873] transform transition-transform ${
+                  className={`w-5 h-5 transform transition-transform ${
                     openQuestion === 1 ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -107,12 +184,12 @@ const Help = () => {
               </div>
             )}
 
-            {/* Question 2 */}
+            {/* FAQ Item 2 */}
             <div className="p-4 bg-white rounded-md text-lg text-[#043873] font-bold flex justify-between items-center">
               <span>How does the system benefit my business?</span>
               <button onClick={() => toggleQuestion(2)}>
                 <svg
-                  className={`w-5 h-5 text-[#043873] transform transition-transform ${
+                  className={`w-5 h-5 transform transition-transform ${
                     openQuestion === 2 ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -131,17 +208,16 @@ const Help = () => {
             {openQuestion === 2 && (
               <div className="p-4 bg-white rounded-md text-gray-600">
                 It improves efficiency, reduces manual errors, enhances employee
-                engagement, and provides valuable insights through data
-                analytics.
+                engagement, and provides valuable insights through data analytics.
               </div>
             )}
 
-            {/* Question 3 */}
+            {/* FAQ Item 3 */}
             <div className="p-4 bg-white rounded-md text-lg text-[#043873] font-bold flex justify-between items-center">
               <span>How can I get started?</span>
               <button onClick={() => toggleQuestion(3)}>
                 <svg
-                  className={`w-5 h-5 text-[#043873] transform transition-transform ${
+                  className={`w-5 h-5 transform transition-transform ${
                     openQuestion === 3 ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -159,8 +235,8 @@ const Help = () => {
             </div>
             {openQuestion === 3 && (
               <div className="p-4 bg-white rounded-md text-gray-600">
-                You can get started by signing up for a free trial on our
-                website or contacting our sales team for a demo.
+                You can get started by signing up for a free trial on our website
+                or contacting our sales team for a demo.
               </div>
             )}
           </section>
@@ -185,13 +261,9 @@ const Help = () => {
             </p>
           </section>
 
-          {/* Main Content */}
           <div className="w-[90%] lg:w-[80%] pb-20 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Section: Illustration */}
-            <div
-              className="flex justify-center items-center"
-              data-aos="fade-right"
-            >
+            <div className="flex justify-center items-center" data-aos="fade-right">
               <img
                 src={second}
                 alt="Contact illustration"
@@ -199,47 +271,67 @@ const Help = () => {
               />
             </div>
 
-            {/* Right Section: Form */}
-            <form className="space-y-5" data-aos="fade-left">
-              {/* Name Field */}
-              <div>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Enter your name"
-                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
-                  required
-                />
-              </div>
+            {/* Right Section: Contact Form */}
+            <div data-aos="fade-left">
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+              >
+                {({ isSubmitting }) => (
+                  <Form className="space-y-5">
+                    <div>
+                      <Field
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
+                      />
+                      <ErrorMessage name="name" component="div" className="text-red-500 text-sm" />
+                    </div>
 
-              {/* Email Field */}
-              <div>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="checkify.kh@gmail.com"
-                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
-                  required
-                />
-              </div>
+                    <div>
+                      <Field
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
+                      />
+                      <ErrorMessage name="email" component="div" className="text-red-500 text-sm" />
+                    </div>
 
-              {/* Message Field */}
-              <div>
-                <textarea
-                  id="message"
-                  placeholder="Message"
-                  rows="4"
-                  className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
-                  required
-                />
-              </div>
+                    <div>
+                      <Field
+                        as="textarea"
+                        id="message"
+                        name="message"
+                        placeholder="Message"
+                        rows="4"
+                        className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-color"
+                      />
+                      <ErrorMessage name="message" component="div" className="text-red-500 text-sm" />
+                    </div>
 
-              {/* Submit Button */}
-              <Submit />
-            </form>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-primary-color text-white px-6 py-3 rounded-md hover:bg-secondary-color transition duration-300 transform hover:scale-105 cursor-pointer"
+                    >
+                      Submit
+                    </button>
+                  </Form>
+                )}
+              </Formik>
+            </div>
           </div>
         </div>
       </div>
+
+      {showSuccessModal && (
+        <SubmitSuccessModal onClose={() => setShowSuccessModal(false)} />
+      )}
 
       <Footer />
     </main>

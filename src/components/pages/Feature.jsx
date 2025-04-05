@@ -5,8 +5,9 @@ import Footer from "../footer/Footer";
 import AOS from "aos"; // Import AOS
 import "aos/dist/aos.css"; // Import AOS styles
 
-import pic1 from "../../assets/feature-pic-1.png";
-import pic2 from "../../assets/feature-pic-2.png";
+import pic1 from "../../assets/feature-new-3.png";
+import pic2 from "../../assets/feature-new-4.png";
+import pic3 from "../../assets/feature-new.png"
 import pic4 from "../../assets/feature-pic-4.png";
 
 const Feature = () => {
@@ -36,7 +37,7 @@ const Feature = () => {
             </p>
           </div>
           <div data-aos="fade-left" className="flex justify-center">
-            <img src={pic1} alt="" className="w-full max-w-[400px] lg:max-w-[450px] object-cover" />
+            <img src={pic1} alt="" className="w-full max-w-[400px] lg:max-w-[800px] object-cover" />
           </div>
         </section>
 
@@ -64,7 +65,7 @@ const Feature = () => {
         {/* Section 3 */}
         <section className="h-auto min-h-[50vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 py-10">
           <div data-aos="fade-right" className="flex justify-center">
-            <img src={pic1} alt="" className="w-full max-w-[400px] object-cover" />
+            <img src={pic3} alt="" className="w-full max-w-[800px] object-cover" />
           </div>
           <div data-aos="fade-left">
             <h2 className="font-bold text-4xl lg:text-5xl leading-snug mb-5 text-white">

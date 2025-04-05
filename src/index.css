@@ -5,6 +5,7 @@
 @theme {
 
     --color-primary-color: #043873;
+    --color-secondary-color: #0650a4;
 }
 
 .action-btn {
@@ -17,3 +18,36 @@
     font-family: Montserrat, serif;
 }
 
+.animate-valid {
+    animation: validPulse 0.5s ease-in-out;
+  }
+  
+  @keyframes validPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes popUp {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-pop-up {
+    animation: popUp 0.3s ease-out;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin 1s linear infinite;
+  }
+  

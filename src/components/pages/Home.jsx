@@ -11,10 +11,6 @@ import pic1 from "../../assets/home-pic-10.png";
 import pic2 from "../../assets/landing-pic-2.png";
 import pic3 from "../../assets/landing-pic-3.png";
 import pic4 from "../../assets/landing-pic-4.png";
-import js from "../../assets/js-logo-v2.png";
-import html from "../../assets/html-logo-v2.png";
-import tailwind from "../../assets/tailwind-logo-v2.png";
-import react from "../../assets/react-logo-v2.png";
 import demo from '../../assets/demo-pic.jpg'
 import quote1 from '../../assets/quote-v7.png'
 import quote2 from '../../assets/quote-v2.png'
@@ -33,31 +29,31 @@ const Home = () => {
       <main className="text-white pt-20">
         {/* Hero Section */}
         <section
-          className=" h-[100vh] grid xl:grid-cols-2 sm:grid-cols-1 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-5 lg:px-20 lg:pr-0"
-          data-aos="fade-up"
-        >
-          <div>
-            <h1 className="font-bold text-4xl lg:text-5xl leading-snug mb-5">
-              Scale Attendance Management Safe and Secure
-            </h1>
-            <p className="leading-7 lg:leading-8 mb-5">
-              Manage your employees' attendance with fast and reliable
-              processes. Secure and highly customizable. Rise Attendance is the
-              best partner for you if you want to scale your workforce
-              management efficiently worldwide.
-            </p>
+  className="min-h-screen grid grid-cols-1 xl:grid-cols-2 gap-10 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] items-center px-6 md:px-10 lg:px-20"
+  data-aos="fade-up"
+>
+  <div className="xl:text-left sm:text-justify">
+    <h1 className="font-bold text-3xl sm:text-3xl lg:text-5xl leading-snug mb-5">
+      Scale Attendance Management Safe and Secure
+    </h1>
+    <p className="text-base sm:text-lg leading-relaxed mb-5">
+      Manage your employees' attendance with fast and reliable processes. Secure and highly customizable. Rise Attendance is the best partner for you if you want to scale your workforce management efficiently worldwide.
+    </p>
+    <div className="flex sm:justify-start xl:justify-start">
+      <Link to="/loginformik">
+        <Button />
+      </Link>
+    </div>
+  </div>
 
-           <Link to='/loginformik'> <Button /> </Link>
-          </div>
-
-          <div className="flex justify-center" data-aos="fade-left">
-            <img
-              src={pic1}
-              alt="Hero"
-              className="w-[800px] max-w-md lg:max-w-[1000px] cursor-pointer"
-            />
-          </div>
-        </section>
+  <div className="flex justify-center items-center" data-aos="fade-left">
+    <img
+      src={pic1}
+      alt="Hero"
+      className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+    />
+  </div>
+</section>
 
         {/* Smart Attendance Section */}
         <section
@@ -154,23 +150,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Tech Stack Section */}
-        <section
-          className="py-20 bg-gradient-to-r from-[#2156B2] via-[#043873] to-[#2156B2] text-white text-center"
-          data-aos="zoom-in"
-        >
-          <h2 className="font-bold text-3xl lg:text-4xl mb-10">TECH STACK</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center">
-            <img className="w-16 sm:w-20 lg:w-32" src={js} alt="JavaScript" />
-            <img className="w-16 sm:w-20 lg:w-32" src={html} alt="HTML" />
-            <img
-              className="w-16 sm:w-20 lg:w-32"
-              src={tailwind}
-              alt="TailwindCSS"
-            />
-            <img className="w-16 sm:w-20 lg:w-32" src={react} alt="React" />
-          </div>
-        </section>
 
         {/* Client Testimonials Section */}
         <section
