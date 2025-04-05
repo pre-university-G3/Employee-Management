@@ -11,9 +11,11 @@ import pic1 from "../../assets/home-pic-10.png";
 import pic2 from "../../assets/landing-pic-2.png";
 import pic3 from "../../assets/landing-pic-3.png";
 import pic4 from "../../assets/landing-pic-4.png";
-import demo from '../../assets/demo-pic.jpg'
 import quote1 from '../../assets/quote-v7.png'
 import quote2 from '../../assets/quote-v2.png'
+import sokleng from '../../assets/Leng.jpg'
+import simsol from '../../assets/Sol.jpg'
+import kitya from '../../assets/Kitya.jpg'
 
 const Home = () => {
   useEffect(() => {
@@ -167,16 +169,15 @@ const Home = () => {
               className="w-28 pl-5 pb-2 "
               />
               <p className="border-b-1 pb-3 text-justify text-black">
-                Checkify is designed as a collaboration tool for businesses that
-                is a full project management solution.
+              Since switching to Chekify, we've seen a noticeable improvement in team productivity and time management. The automation features save us hours every week. Highly recommend it!
               </p>
               <img 
-              src={demo}
+              src={sokleng}
                alt="" 
                className="w-30 h-30 rounded-full float-left mt-5 object-cover"
                />
-              <h3 className="text-[#043873] font-bold mt-5 text-2xl">Hout Sokleng</h3>
-              <p className="pl-33 text-start text-black">Head of Talent Acquisition, North America</p>
+              <h3 className="text-[#043873] font-bold mt-10 text-2xl mb-2">Hout Sokleng</h3>
+              <p className="pl-38 text-start text-black">- AUB</p>
             </div>
             
             <div className="bg-primary-color shadow-md rounded-3xl p-5 h-100 w-90 justify-self-center text-white">
@@ -185,17 +186,16 @@ const Home = () => {
               alt="" 
               className="w-30 pb-5"
               />
-              <p className="border-b-1 pb-3 text-justify ">
-                Checkify is designed as a collaboration tool for businesses that
-                is a full project management solution.
+              <p className="border-b-1 pb-15 text-justify">
+              Smart, simple, and effective. Chekify is everything an employee management system should be.
               </p>
               <img 
-              src={demo}
+              src={simsol}
                alt="" 
                className="w-30 h-30 rounded-full float-left mt-5 object-cover"
                />
-              <h3 className="text-white font-bold mt-5 text-2xl">Hout Sokleng</h3>
-              <p className="pl-33 text-start text-whtie">Head of Talent Acquisition, North America</p>
+              <h3 className="text-white font-bold mt-10 mb-2 text-2xl text-start pl-35">Sim Sol</h3>
+              <p className="pl-38 text-start text-whtie">- ISTAD</p>
             </div>
 
             <div className="bg-primary-color shadow-md rounded-3xl p-5 h-100 w-90 justify-self-center text-white">
@@ -205,16 +205,15 @@ const Home = () => {
               className="w-30 pb-5"
               />
               <p className="border-b-1 pb-3 text-justify ">
-                Checkify is designed as a collaboration tool for businesses that
-                is a full project management solution.
+              We've tried multiple employee management systems, but nothing compares to Chekify. It's reliable, easy to use, and the customer support is top-notch. Couldn't ask for more.
               </p>
               <img 
-              src={demo}
+              src={kitya}
                alt="" 
                className="w-30 h-30 rounded-full float-left mt-5 object-cover"
                />
-              <h3 className="text-white font-bold mt-5 text-2xl">Hout Sokleng</h3>
-              <p className="pl-33 text-start text-whtie">Head of Talent Acquisition, North America</p>
+              <h3 className="text-white font-bold mt-10 mb-2 text-2xl">Yuom Kitya</h3>
+              <p className="pl-38 text-start text-whtie">- AUPP</p>
             </div>
 
           </div>

@@ -36,7 +36,7 @@ const About = () => {
   // Team members data
   const teamMembers = [
     { name: "MEY PANHAWATH", role: "LEADER, FRONTEND, UX/UI",image: wath, github: "https://github.com/meypanhawath" , email: "panhawath18@gmail.com" },
-    { name: "LONH RAKSMEY", role: "VICE LEADER, FRONTEND, UX/UI",image: raksmey, github: "https://github.com/LonhRaksmey" ,email: "lonhraksmey828282@gmail.com " },
+    { name: "LONH RAKSMEY", role: "CO LEADER, FRONTEND, UX/UI",image: raksmey, github: "https://github.com/LonhRaksmey" ,email: "lonhraksmey828282@gmail.com " },
     { name: "LIM SOKHEANG", role: "LEAD UX/UI, PRESENTER",image: Kheang, github: "https://github.com/Rejected2005" ,email: "sokheanglim2005@gmail.com" },
     { name: "RITH SARAMANITH", role: "FRONTEND, UX/UI",image: Nith, github: "https://github.com/Manith991" ,email: " rithsaramanith123@gmail.com " },
     { name: "YUOM KITYA", role: "UX/UI",image: Kitya, github: "https://github.com/kitya-yuom81" , email: " kityayuom@gmail.com " },
